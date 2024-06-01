@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Javascript Event</title>
+        <link rel="stylesheet" href="prog04style.css">
+        <script>
+            // Set counters to 0
+            counter1Num = 0;
+            counter2Num = 0;
+            counter3Num = 0;
+            
+            // Function to update counters
+            function counter(buttonCounter) {                
+                switch(buttonCounter) {
+                    case 1: 
+                        counter1Num++;
+                        counter1.textContent = counter1Num;
+                        break;
+                    case 2:
+                        counter2Num++;
+                        counter2.textContent = counter2Num;
+                        break;
+                    case 3: 
+                        counter3Num++;
+                        counter3.textContent = counter3Num;
+                        break;
+                }
+            }
+            
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1>Aileen Shi CPSC3750</h1>
+        </header>
+        <nav>
+            <iframe src="../navbar.html" style="width: 100%; height: 50px; border: none;"></iframe>
+        </nav>
+        <main>
+            <header>
+                <h1>Prog 04</h1>
+            </header>
+            <div class="buttons">
+                <button type="button" id="button1" onclick="counter(1)">RED</button>
+                <button type="button" id="button2" onclick="counter(2)">GREEN</button>
+                <button type="button" id="button3" onclick="counter(3)">BLUE</button>
+            </div>
+            <div class="counters">
+                <h3>Red Count: <span id="counter1">0</span></h3>
+                <h3>Green Count: <span id="counter2">0</span></h3>
+                <h3>Blue Count: <span id="counter3">0</span></h3>
+            </div>
+        </main>
+    </body>
+</html>

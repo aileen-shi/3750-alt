@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+header {
+    padding-left: 20px;
+}
+
+button {
+    color: white;
+    background-color: black;
+    padding: 20px;
+    border: 0;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#button1:hover {
+    background-color: red;
+}
+
+#button2:hover {
+    background-color: green;
+}
+
+#button3:hover {
+    background-color: blue;
+}
+
+button:active {
+    color: black;
+    background-color: white;
+}
+
+.buttons {
+    max-width: 1000px;
+    margin: 0 20%;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.counters {
+    margin: 0 20%;
+    min-width: 200px;
+    padding: 20px;
+    background-color: #dbdbdb;
+    border-radius: 5px;
+}

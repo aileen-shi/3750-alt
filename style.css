@@ -1,0 +1,35 @@
+body {
+    color: #454c57;
+    font-family: sans-serif;
+    background-color: #dce8f2;
+}
+
+h1 , h2, h3 {
+    color: #364a6b;
+}
+
+h2, h3, p, ul {
+    margin-left: 50px;
+}
+
+#face {
+    width: 50%;
+    max-width: 400px;
+    margin: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.gallery img {
+    border-radius: 8px;
+}

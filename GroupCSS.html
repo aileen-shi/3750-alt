@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Group CSS</title>
+    </head>
+    <body>
+        <header>
+            <iframe src="navbar.html" style="width: 100%; height: 50px; border: none;"></iframe>
+            <h1>CSS Demo</h1>
+        </header>
+        <main>
+            <div class="rectangle">
+                <p>This rectangle is purple</p>
+            </div>
+            <div class="rectangle">
+                <p id="orange-text">This text is orange</p>
+            </div>
+            <div class="rectangle border">
+                <p>This rectangle has a border</p>
+            </div>
+            <p id="text-with-bg">This text has a purple background</p>
+            <div class="rectangle fancy-border"><p>This rectangle has a fancy border</p></div>
+            <div class="rectangle crazy-border"><p>This rectangle has a crazy border</p></div>
+            <div class="rectangle rounded"><p>This border is rounded</p></div>
+        </main>
+    </body>
+</html>
+
+<style>
+    /* THIS IS A COMMENT :D */
+    main {
+        width: 100%;
+    }
+    body {
+        background-image: url("clemson.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: scroll;
+        box-sizing: border-box;
+    }
+    .rectangle {
+        background-color: #7f55a3;
+        width: 400px;
+        height: 50px;
+        margin: 40px;
+        padding: 15px;
+    }
+    p {
+        text-align: center;
+    }
+    h1 {
+        margin: 30px;
+    }
+    #orange-text {
+        color: #e07d10;
+    }
+    .border {
+        border: 5px solid #e07d10;
+
+    }
+    #text-with-bg {
+        background-color: #7f55a3;
+    }
+    .fancy-border {
+        border-color: #e07d10;
+        border-style: dotted;
+        border-width: 8px;
+    }
+    .crazy-border {
+        border-color: red green yellow purple;
+        border-top-style: dotted;
+        border-right-style: dashed;
+        border-bottom-style: ridge;
+        border-left-style: ridge;
+        border-width: thick;
+    }
+
+    .rounded {
+        border-radius: 5px;
+        border: 5px solid #e07d10;
+    }
+</style>

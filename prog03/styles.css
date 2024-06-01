@@ -1,0 +1,108 @@
+body {
+    font-family: sans-serif;
+    background-color:#bababa;
+    box-sizing: border-box;
+}
+
+h1 {
+    margin-left: 15px;
+}
+
+article {
+    margin-left: 40px;
+    margin-right: 40px;
+    border-bottom: 3px solid black;
+}
+
+section header {
+    margin-left: 10px;
+}
+
+section p {
+    margin-left: 20px;
+}
+
+p {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+aside {
+    font-style: italic;
+    padding: 20px;
+    margin: auto;
+    max-width: 500px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.visual {
+    text-align: center;
+    margin-top: 50px;
+}
+
+img {
+    max-height: 400px;
+}
+
+figcaption {
+    font-style: italic;
+    margin: auto;
+    margin-top: 10px;
+}
+
+h3 {
+    padding-top: 10px;
+}
+
+h4 {
+    padding-left: 20px;
+}
+
+li {
+    padding-left: 10px;
+}
+
+.page-nav {
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.page-nav a {
+    background-color: green;
+    border-radius: 3px;
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.article-footer {
+    text-align: center;
+    margin: 30px;
+}
+
+.article-footer p:last-of-type {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.page-footer {
+    position:relative;
+    float: left;
+    width: 100%;
+    background-color: gray;
+    text-align:center;
+    font-style: italic;
+    padding: 10px;
+    line-height: 15%;
+}
+
+article section:last-of-type {
+    padding-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+}

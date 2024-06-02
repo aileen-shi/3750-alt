@@ -16,19 +16,19 @@ button {
     border-radius: 5px;
 }
 
-#button1:hover {
+#button1:active {
     background-color: red;
 }
 
-#button2:hover {
+#button2:active {
     background-color: green;
 }
 
-#button3:hover {
+#button3:active {
     background-color: blue;
 }
 
-button:active {
+button:hover {
     color: black;
     background-color: white;
 }

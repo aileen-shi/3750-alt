@@ -30,7 +30,6 @@ function createButton() {
     }
 
     var newButton = document.createElement("button");
-    newButton.setAttribute("move-dir", direction);
     newButton.innerHTML = Math.floor(Math.random() * 100);
     
     newButton.classList.add("color-button");

@@ -1,0 +1,36 @@
+/*
+    Aileen Shi
+    Prog 06
+    CPSC3750
+    6/8/24
+
+    This is the stylesheet for Prog 06
+*/
+
+* {
+    display: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+/* Menu */
+.menu {
+    padding: 10px;
+}
+
+/* Viewing area */
+.view {
+    width: 100%;
+    height: 75vh;
+    background-color: black;
+    position: relative;
+}
+
+/* Generated buttons */
+.color-button {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+}

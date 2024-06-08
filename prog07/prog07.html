@@ -1,0 +1,46 @@
+<!-- 
+    Aileen Shi 
+    Prog 07
+    CPSC3750
+    6/8/24
+
+    HTML file for sorting names
+-->
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Array Sorting Example</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="prog07style.css">
+        <script type="text/javascript" src="sort.js"></script>
+    </head>
+
+    <body>
+         <!-- Navigation Menu -->
+         <header>
+            <iframe src="../navbar.html" style="width: 100%; height: 50px; border: none;"></iframe>
+        </header>
+        <main>
+            <h1>Sorting String Arrays</h1>
+            <p>Enter two or more names in the field below,
+            and the sorted list of names will appear in the
+            textarea.</p>
+            <!-- Form -->
+            <form name="theform">
+                Name:
+                <!-- Typing area -->
+                <input type="text" name="newname" size="20" id="newname">
+                <!-- Submit button -->
+                <input type="button" name="addname" value="Add"
+                id="addname" onclick="SortNames();">
+                <br/>
+                <!-- Display names -->
+                <h2>Sorted Names</h2>
+                <textarea cols="60" rows="10" name="sorted">
+                The sorted names will appear here.
+                </textarea>
+            </form>
+        </main>
+    </body>
+</html>

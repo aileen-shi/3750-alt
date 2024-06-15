@@ -1,0 +1,67 @@
+<!-- 
+    Aileen Shi
+    6/15/24
+    CPSC 3750
+    Group Events html
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="GroupEvents.css">
+        <title>Group Events</title>
+    </head>
+    <body>
+        <header>
+            <h1>Group Events Examples</h1>
+        </header>
+        <header>
+            <h2>Animation Events</h2>
+        </header>
+        <div class="event-container anim-container">
+            <div class="rect animated" id="anim-rect"></div>
+            <p id="anim-text">Nothing has happened</p>
+        </div>
+        <header>
+            <h2>Drag Events</h2>
+        </header>
+        <div class="event-container drag">
+            <img src="apple.png" id="apple" draggable="true">
+            <img src="tree.jpg" id="tree">
+            <img src="basket.jpg" id="basket">
+            <p id="drag-text">Try dragging the apple to the basket</p>
+        </div>
+        <header>
+            <h2>Input Events</h2>
+        </header>
+        <div class="event-container input">
+            <input type="text" id="input" placeholder="Type here"
+            oninput="InputEvent();">
+            <p id="input-text"></p>
+        </div>
+        <header>
+            <h2>Mouse Events</h2>
+        </header>
+        <div class="event-container">
+            <input type="button" class="button" id="click" value="Click" 
+            onclick="Mouse(this);">
+            <input type="button" class="button" id="r-click" value="Right click" 
+            oncontextmenu="Mouse(this);">
+            <input type="button" class="button" id="d-click" value="Double click" 
+            ondblclick="Mouse(this);">
+            <input type="button" class="button" id="mouseover" value="Mouseover" 
+            onmouseover="Mouse(this);">
+        </div>
+        <header>
+            <h2>Focus Event</h2>
+        </header>
+        <div class="event-container">
+            <label for="focus1">Type here first: <input id="focus1" name="focus1"></label>
+            <label for="focus2">Type here second: <input id="focus2" name="focus2"></label>
+        </div>
+        <script type="text/javascript" src="GroupEvents.js"></script>
+        <script src="../navbar.js"></script>
+    </body>
+</html>

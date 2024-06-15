@@ -1,0 +1,49 @@
+<!--
+    Aileen Shi
+    6/15/24
+    CPSC 3750
+    Prog 09 HTML
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS Business Cards</title>
+        <link rel="stylesheet" href="prog09.css">
+        <script type="text/javascript" src="cards.js"></script>
+        <script type="text/javascript" src="loops.js"></script>
+    </head>
+    <body>
+        <!-- Header -->
+        <header>
+            <h1>Dynamic Business Cards</h1>
+        </header>
+        <!-- Form -->
+        <form name="theform">
+            <h2>Form</h2>
+            <fieldset>
+                <label for="name">Name: <input id="name" name="name" type="text"
+                required></label>
+                <label for="email">Email: <input id="email" name="email" type="text"
+                required></label>
+                <label for="address">Address: <input id="address" name="address" type="text"
+                required></label>
+                <label for="phone">Phone Number: <input id="phone" name="phone" type="text"
+                required></label>
+                <label for="birthdate">Birthdate: <input id="birthdate" name="birthdate" type="date"
+                required></label>
+            </fieldset>
+            <input type="button" value="Add New Card" name="submit" id="submit" onclick="NewCard()"> 
+        </form>
+        <!-- Display -->
+        <div class="card-container">
+            <h2>Cards</h2>
+            <input type="button" name="show" id="show" value="Display All"
+            onclick="ShowAll()">
+            <ul id="cardList">
+        </div>
+        <script src="../navbar.js"></script>
+    </body>
+</html>

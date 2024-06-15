@@ -1,0 +1,58 @@
+nav {
+    overflow: hidden;
+    font-family: sans-serif;
+    background-color: #313336;
+    
+}
+nav a {
+    float: left;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+.assignment-container {
+    float: left;
+    overflow: visible;
+}
+
+.assignment-container .assignment-btn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    color: white;
+    padding: 14px 16px;
+}
+
+nav a:hover, .assignment-container:hover .assignment-btn {
+    background-color: #1a1c1f;
+}
+
+.assignment-pages {
+    display: none;
+    position: absolute;
+    background-color: #485a75;
+    min-width: 160px;
+    z-index: 999;
+}
+
+.assignment-pages a {
+    float: none;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    text-align: left;
+    display: block;
+}
+
+.assignment-pages a:hover {
+    background-color: #222d3d;
+}
+
+.assignment-container:hover .assignment-pages {
+    display: block;
+}

@@ -1,0 +1,51 @@
+<!--
+    Aileen Shi
+    6/15/24
+    CPSC 3750
+
+    HTML for Exam 1 
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="prime.css">
+        <script type="text/javascript" src="prime.js"></script>
+        <title>Exam 1</title>
+    </head>
+    <body>
+        <header>
+            <h1>List Generator</h1>
+        </header>
+        <!-- Form -->
+        <form name="theform" class="form">
+            Enter a number:
+            <!-- Text input -->
+            <input type="text" name="newnumber" size="20" id="newnumber">
+            <input type="button" name="start" value="START"
+            id="start" onclick="GenLists();">
+            <br>
+            <!-- Show lists -->
+            <div class="list-container">
+                <h2>Prime</h2>
+                <textarea disabled cols="40" rows="10" name="primelist" id="prime">
+                </textarea>
+                <br>
+                <input type="button" name="primesumbtn" value="SUM" id="primesumbtn"
+                onclick="PrimeSum();">
+                <p>Sum: <span id="primesum">0</span></p>
+            </div>
+            <div class="list-container">
+                <h2>Not Prime</h2>
+                <textarea disabled cols="40" rows="10" name="notprimelist" id="notprime">
+                </textarea>
+                <br>
+                <input type="button" name="notprimesumbtn" value="SUM" id="notprimesumbtn"
+                onclick="NotPrimeSum();">
+                <p>Sum: <span id="notprimesum">0</span></p>
+            </div>
+        </form>
+        <script src="../navbar.js"></script>
+    </body>
+</html>

@@ -12,5 +12,6 @@
             <iframe src="../navbar.html" style="width: 100%; height: 50px; border: none;"></iframe>
         </nav>
         <h1><?php echo "Hello World"; ?></h1>
+        <script src="navbar.js"></script>
     </body>
 </html>

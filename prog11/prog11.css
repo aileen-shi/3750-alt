@@ -1,0 +1,73 @@
+/*
+    Aileen Shi  
+    6/26/24
+    CPSC 3750
+    Prog11 jQuery
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  font-size: calc(10px + 1vw);
+  margin: 1rem;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  font-family: Roboto, sans-serif;
+}
+
+h1 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  color: #3b3b3b;
+}
+
+.color-div {
+  padding: 1rem;
+}
+
+.div-btn {
+  margin: 1em;
+}
+
+#date {
+  margin: 1rem;
+}
+
+.ui-widget-header {
+  background: #cedc98;
+  border: 1px solid #dddddd;
+  color: #333333;
+  font-weight: bold;
+}
+
+#progress {
+  margin: 1rem;
+  margin-bottom: 5rem;
+}

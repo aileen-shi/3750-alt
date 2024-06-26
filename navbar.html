@@ -1,86 +1,100 @@
 <!--
     Aileen Shi
-    6/15/24
+    6/26/24
     CPSC 3750
 
     HTML for navbar
 -->
 
 <nav>
-    <a href="/index.html" target="_top">Home</a>
-    <div class="assignment-container">
-        <button class="assignment-btn">HW</button>
-        <div class="assignment-pages">
-            <a href="/assignments.html" target="_top">Prog Assignments</a>
-            <a href="/group.html" target="_top">Group Assignments</a>
-        </div>
+  <a href="/index.html" target="_top">Home</a>
+  <!-- Prog Assignments -->
+  <div class="assignment-container">
+    <button class="assignment-btn">Prog</button>
+    <div class="assignment-pages">
+      <a href="/layout.html">02 Layout</a>
+      <a href="/prog03/design.html">03 Design</a>
+      <a href="/prog04/prog04.html">04 Button Counter</a>
+      <a href="helloworld.php">05 Hello World</a>
+      <a href="/prog06/ButtonMove.html">06 Button Move</a>
+      <a href="/prog07/prog07.html">07 Sort Demo</a>
+      <a href="/prog09/prog09.html">09 Cards</a>
     </div>
-    <div class="assignment-container">
-        <button class="assignment-btn">Exams</button>
-        <div class="assignment-pages">
-            <a href="/exam1/prime.html" target="_top">Exam 1</a>
-        </div>
+  </div>
+  <!-- Group Assignments -->
+  <div class="assignment-container">
+    <button class="assignment-btn">Group</button>
+    <div class="assignment-pages">
+      <a href="/GroupCSS.html">01 CSS</a>
+      <a href="/group02/GroupCSS2.html">02 More CSS</a>
+      <a href="/group03/GroupEvents.html">03 Group Events</a>
     </div>
+  </div>
+  <div class="assignment-container">
+    <button class="assignment-btn">Exams</button>
+    <div class="assignment-pages">
+      <a href="/exam1/prime.html">Exam 1</a>
+    </div>
+  </div>
 </nav>
 
-
 <style>
-    nav {
-        overflow: hidden;
-        font-family: sans-serif;
-        background-color: #313336;
-        
-    }
-    nav a {
-        float: left;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        color: white;
-        font-size: 16px;
-    }
-    .assignment-container {
-        float: left;
-        overflow: visible;
-    }
+  nav {
+    overflow: hidden;
+    font-family: sans-serif;
+    background-color: #313336;
+  }
+  nav a {
+    float: left;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+  }
+  .assignment-container {
+    float: left;
+    overflow: visible;
+  }
 
-    .assignment-container .assignment-btn {
-        font-size: 16px;
-        border: none;
-        outline: none;
-        background-color: inherit;
-        font-family: inherit;
-        margin: 0;
-        color: white;
-        padding: 14px 16px;
-    }
+  .assignment-container .assignment-btn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    color: white;
+    padding: 14px 16px;
+  }
 
-    nav a:hover, .assignment-container:hover .assignment-btn {
-        background-color: #1a1c1f;
-    }
+  nav a:hover,
+  .assignment-container:hover .assignment-btn {
+    background-color: #1a1c1f;
+  }
 
-    .assignment-pages {
-        display: none;
-        position: absolute;
-        background-color: #485a75;
-        min-width: 160px;
-        z-index: 999;
-    }
+  .assignment-pages {
+    display: none;
+    position: absolute;
+    background-color: #485a75;
+    min-width: 160px;
+    z-index: 999;
+  }
 
-    .assignment-pages a {
-        float: none;
-        color: white;
-        padding: 12px 16px;
-        text-decoration: none;
-        text-align: left;
-        display: block;
-    }
+  .assignment-pages a {
+    float: none;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    text-align: left;
+    display: block;
+  }
 
-    .assignment-pages a:hover {
-        background-color: #222d3d;
-    }
+  .assignment-pages a:hover {
+    background-color: #222d3d;
+  }
 
-    .assignment-container:hover .assignment-pages {
-        display: block;
-    }
+  .assignment-container:hover .assignment-pages {
+    display: block;
+  }
 </style>

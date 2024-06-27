@@ -1,0 +1,59 @@
+/*
+    Aileen Shi
+    6/27/24
+    CPSC 3750
+    Group Audio
+*/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    line-height: 1.5;
+    font-family: 'Judson', serif;
+    font-size: calc(13px + 1vw);
+    background-color: #598392;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+img {
+    display: block;
+    max-width: 400px;
+    margin: 1rem auto;
+    width: 30%;
+    border-radius: 5px;
+}
+
+audio {
+    display: block;
+    margin: 1rem auto;
+    max-width: 500px;
+    width: 60%;
+}
+
+h1, h3, h4, h5, h6 {
+    font-family: 'Archivo Black', sans-serif;
+    margin: 1rem;
+    color: #EFF6E0;
+    letter-spacing: .25rem;
+}
+
+figcaption {
+    text-align: center;
+    color: #124559;
+}
+
+audio {
+    margin-bottom: 10rem;
+}

@@ -63,7 +63,7 @@ if (!empty($query)) {
     foreach ($names as $state => $capital) {
         if (stristr($state, $query)) {
             // Output matched state and capital, using htmlspecialchars to prevent XML injection
-            echo "<name>" . htmlspecialchars($capital, ENT_XML1, 'UTF-8') . "</name>\n";
+            echo "<name>" . $capital . "</name>\n";
         }
     }
 }

@@ -4,7 +4,7 @@ function startGame() {
     .then((response) => response.json())
     .then((data) => {
       if (data.word) {
-        alert(data.word);
+        //alert(data.word);
         setupGame(data.word);
       } else {
         console.error("Error fetching word:", data.error);
@@ -14,6 +14,10 @@ function startGame() {
 }
 
 function setupGame(word) {
+  // Check if cheat mode enabled
+  if (document.getElementById("cheat").checked) {
+    alert(word);
+  }
   const wordToGuess = document.getElementById("wordToGuess");
   wordToGuess.innerHTML = "_ ".repeat(word.length).trim();
   generateLetterButtons();

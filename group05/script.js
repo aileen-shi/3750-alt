@@ -42,4 +42,4 @@ function guessLetter(letter) {
 }
 
 // Initially start the game
-startGame();
+//startGame();

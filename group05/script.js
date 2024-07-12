@@ -26,6 +26,7 @@ function setupGame(word) {
 function generateLetterButtons() {
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const lettersDiv = document.getElementById("letters");
+  lettersDiv.style.backgroundColor = "#b8b9ba";
   lettersDiv.innerHTML = ""; // Clear previous buttons
   letters.split("").forEach((letter) => {
     const button = document.createElement("button");

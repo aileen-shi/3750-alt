@@ -9,7 +9,7 @@ iguana
 jump
 knight
 lamp
-moon
+many
 nursery
 octopus
 princess

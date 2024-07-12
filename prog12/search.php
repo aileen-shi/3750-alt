@@ -1,6 +1,7 @@
 <?php
   header("Content-type: text/xml");
-  $names = array (
+  $test = "meow";
+  $names = array(
    "John Smith", "John Jones", "Jane Smith", "Jane Tillman",
    "Abraham Lincoln", "Sally Johnson", "Kilgore Trout",
    "Bob Atkinson","Joe Cool", "Dorothy Barnes",
@@ -10,6 +11,8 @@
 
 echo "<?xml version=\"1.0\" ?>\n";
 echo "<names>\n";
+echo $test;
+echo $names[0];
 while (list($k,$v)=each($names)) {
    if (stristr($v,$_GET['query'])) {
       echo "<name>$v</name>\n";

@@ -55,10 +55,16 @@
 
 echo "<?xml version=\"1.0\" ?>\n";
 echo "<names>\n";
-while (list($k,$v)=each($names)) {
-   if (stristr($v,$_GET['query'])) {
-      echo "<name>$v</name>\n";
+
+$query =  isset($_GET['query']) ? $_GET['query'] : '';
+
+if(!empty($query)) {
+   foreach ($names as $state => $capital) {
+      if (stristri($capital, $query)) {
+         echo "<name>" . htmlspecialchars($capital) . "</name>\n";
+      }
    }
 }
+
 echo "</names>\n";
 ?>

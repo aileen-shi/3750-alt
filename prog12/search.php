@@ -1,10 +1,10 @@
+<?php
 /*
     Aileen Shi
     7/12/24
     CPSC 3750
     Prog12 AJAX PHP
 */
-<?php
   header("Content-type: text/xml");
   $names = array(
    "Alabama" => "Montgomery",

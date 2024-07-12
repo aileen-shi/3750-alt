@@ -1,7 +1,7 @@
 <?php
-// SECURITY FLAW: 'words.txt' needs to be stored outside of the web root directory for security reasons
 
-$filePath = 'words.txt';
+// words.txt stored outside of root to prevent user from loading
+$filePath = '../../data/words.txt';
 
 // Check if the file exists
 if (file_exists($filePath)) {

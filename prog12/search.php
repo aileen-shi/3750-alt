@@ -1,6 +1,5 @@
 <?php
   header("Content-type: text/xml");
-  $test = "meow";
   $names = array(
    "John Smith", "John Jones", "Jane Smith", "Jane Tillman",
    "Abraham Lincoln", "Sally Johnson", "Kilgore Trout",
@@ -11,8 +10,18 @@
 
 echo "<?xml version=\"1.0\" ?>\n";
 echo "<names>\n";
-echo $test;
-echo $names[0];
+
+$query = isset($_GET['query']) ? $_GET['query'] : '';
+
+if (!empty($query)) {
+   // Loop through the names array
+   foreach ($names as $name) {
+      if (stristr($name, $query)) {
+         // Output matched names, using htmlspecialchars to prevent XML injection
+         echo "<name>" . htmlspecialchars($name, ENT_XML1, 'UTF-8') . "</name>\n";
+      }
+   }
+}
 
 echo "</names>\n";
 ?>

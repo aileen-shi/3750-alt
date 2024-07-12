@@ -1,7 +1,11 @@
 <?php
-  header("Content-type: text/xml");
-  $names = array (
-    "Alabama" => "Montgomery",
+   ini_set('display_errors, 1');
+   ini_set('display_startup_errors, 1');
+   error_reporting(E_ALL);
+
+   header("Content-type: text/xml");
+   $names = array (
+      "Alabama" => "Montgomery",
     "Alaska" => "Juneau",
     "Arizona" => "Phoenix",
     "Arkansas" => "Little Rock",
@@ -51,7 +55,7 @@
     "West Virginia" => "Charleston",
     "Wisconsin" => "Madison",
     "Wyoming" => "Cheyenne"
-    );
+   );
 
 echo "<?xml version=\"1.0\" ?>\n";
 echo "<names>\n";

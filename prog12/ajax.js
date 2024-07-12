@@ -1,3 +1,10 @@
+/*
+    Aileen Shi
+    7/12/24
+    CPSC 3750
+    Prog12 AJAX PHP
+*/
+
 // global variables to keep track of the request
 // and the function to call when done
 var ajaxreq = false,

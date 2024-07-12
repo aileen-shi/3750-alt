@@ -1,3 +1,9 @@
+/*
+    Aileen Shi
+    7/12/24
+    CPSC 3750
+    Prog12 AJAX PHP
+*/
 <?php
   header("Content-type: text/xml");
   $names = array(
@@ -56,13 +62,16 @@
 echo "<?xml version=\"1.0\" ?>\n";
 echo "<names>\n";
 
+// Check if query exists and is not null and use query
 $query = isset($_GET['query']) ? $_GET['query'] : '';
 
+// Changed each to foreach
+
 if (!empty($query)) {
-    // Loop through the names array
+    // Go through names
     foreach ($names as $state => $capital) {
         if (stristr($state, $query)) {
-            // Output matched state and capital, using htmlspecialchars to prevent XML injection
+            // Echo capital that matches
             echo "<name>" . $capital . "</name>\n";
         }
     }

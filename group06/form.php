@@ -33,10 +33,10 @@
     ini_set('display_errors', 1);
 
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["upload"])) {
-        $fileTmpPath = $_FILES["uploadFile"]["tmp_name"];
-        $fileName = $_FILES["uploadFile"]["name"];
-        $fileSize = $_FILES["uploadFile"]["size"];
-        $fileType = $_FILES["uploadFile"]["type"];
+        $fileTmpPath = $_FILES["upload"]["tmp_name"];
+        $fileName = $_FILES["upload"]["name"];
+        $fileSize = $_FILES["upload"]["size"];
+        $fileType = $_FILES["upload"]["type"];
 
         // Display uploaded file details
         echo "<h2>Uploaded File Details:</h2>";

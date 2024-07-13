@@ -5,11 +5,12 @@
     7/13/24
     PHP I/O
 */
-setcookie("vegetable", "artichoke", time()+3600, "/", ".aileenshi.com", 0);
+setcookie("first", "user", time()+3600, "/", ".aileenshi.com", 0);
 
-if (isset($_COOKIE['vegetable'])) {
-	echo "<p>Hello again! You have chosen: ".$_COOKIE['vegetable'].".</p>";
+if (!isset($_COOKIE['user'])) {
+    echo "<p>Hello, you. This may be your first visit.</p>";
+	
 } else {
-	echo "<p>Hello, you. This may be your first visit.</p>";
+	echo "<p>Hello again! </p>";
 }
 ?>

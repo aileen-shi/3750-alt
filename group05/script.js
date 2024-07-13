@@ -42,7 +42,7 @@ function setupGame(word) {
 
   const wordToGuess = document.getElementById("wordToGuess");
   wordToGuess.innerHTML = "_ ".repeat(word.length).trim();
-  guess = wordToGuess.innerHTML;
+  guess = "_".repeat(answer.length);
   generateLetterButtons();
 }
 
@@ -62,7 +62,6 @@ function generateLetterButtons() {
 function guessLetter(letter) {
   const image = document.getElementById("player");
   const wordToGuess = document.getElementById("wordToGuess");
-  console.log(answer[right]);
 
   // Check if new guess
   if (!attempted.includes(letter)) {
@@ -89,8 +88,9 @@ function guessLetter(letter) {
         if (answer[i] == letter) {
           update += letter;
         } else {
-          update += guess;
+          update += guess[i];
         }
+        update += " ";
         guess = update;
         console.log(guess);
         wordToGuess.innerHTML = guess;

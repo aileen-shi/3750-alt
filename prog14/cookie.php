@@ -26,7 +26,7 @@ function armstrong($num) {
 
     for($i = 0; $i < $n; $i++) {
         $temp = pow($array[$i], $n);
-        echo "<p>" . $digit . "</p>";
+        echo "<p>" . $temp . "</p>";
     }
 }
 

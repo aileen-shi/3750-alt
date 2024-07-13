@@ -6,6 +6,7 @@
     <title>Form Response</title>
 </head>
 <body>
+    <h1>hello<h1>
     <p><strong><?php echo $_POST['name']; ?></strong> has been registered</p>
     <h2>Description:</h2>
     <p><?php echo $_POST['description']; ?></p>

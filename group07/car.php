@@ -24,7 +24,7 @@ session_start();
      echo "<p>Your cars have been registered!</p>";
     }
     ?>
-    <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+    <form method="post" action="">
       <p><label for="cars">Choose a car:</label>
       <select name="cars" id="cars" size="7" multiple>
         <option value="Clown">Clown</option>

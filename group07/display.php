@@ -19,5 +19,6 @@
     }
     ?>
     <p><a href="car.php">Return to Car Choice Page</a></p>
+    <script src="../navbar.js"></script>
     </body>
 </html>

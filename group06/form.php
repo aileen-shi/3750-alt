@@ -27,6 +27,10 @@
         echo '<p>None</p>';
     }
     ?>
+    <h2>Image</h2>
+    <?php
+    phpinfo();
+    ?>
     <script src="../navbar.js"></script>
 </body>
 </html>

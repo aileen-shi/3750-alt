@@ -93,7 +93,7 @@ function guessLetter(letter) {
           guessSpace += letter;
         } else {
           update += guess[i];
-          guessSpace += letter;
+          guessSpace += guess[i];
           console.log(guess[i]);
         }
         guessSpace += " ";

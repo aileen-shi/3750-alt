@@ -28,7 +28,7 @@ function armstrong($num) {
         $temp = pow((int)$array[$i], $n);
         //echo "<p>" . $temp . "</p>";
         // Update Sum
-        $sum += $temp;
+        $sum += (int)$temp;
     }
 
     return if ($sum == $num);
@@ -46,6 +46,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Check if armstrong
             if (armstrong($num)) {
                 echo "<p>armstrong num</p>";
+            }
+            else {
+                echo "<p>not armstrong num</p>";
             }
         }
             

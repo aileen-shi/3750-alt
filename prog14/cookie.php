@@ -26,13 +26,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo "<p>first if</p>";
     if (isset($_POST['numbers'])) {
         echo "<p>Entered val in text area</p>";
-        /*
+        
         $nums = explode(' ', $_POST['numbers']);
     
         foreach($nums as $num) {
             echo "<p>" . $num ."</p>"
         }
-            */
+            
     }
 }
 ?>

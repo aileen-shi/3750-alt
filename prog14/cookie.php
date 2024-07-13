@@ -96,9 +96,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $none = False;
             }
             if (prime($num, 2)) {
-                $prime = fopen("prime.txt", "a");
-                fwrite($prime, $num . "\n");
-                fclose($prime);
+                if (file_put_contents('prime.txt', $num, "\n", FILE_APPEND !== false)) {
+                    echo "<p>Number written to armstrong.txt</p>";
+                } else {
+                    echo "<p>Failed to write number to armstrong.txt</p>";
+                }
+                }
+                //$prime = fopen("prime.txt", "a");
+                //fwrite($prime, $num . "\n");
+                //fclose($prime);
                 $none = False;
             }
             if ($none) {

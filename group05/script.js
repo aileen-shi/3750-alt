@@ -25,10 +25,16 @@ function setupGame(word) {
     alert(word);
   }
   // Initial image
-  const image = document.createElement("img");
-  image.id = "player";
-  image.src = "1.png";
-  document.getElementById("image-container").appendChild(image);
+  const image = document.getElementById("player");
+  // Create if doesnt exist
+  if (image == null) {
+    const newImage = document.createElement("img");
+    newImage.id = "player";
+    newImage.src = "1.png";
+    document.getElementById("image-container").appendChild(newImage);
+  } else {
+    image.src = "1.png";
+  }
 
   const wordToGuess = document.getElementById("wordToGuess");
   wordToGuess.innerHTML = "_ ".repeat(word.length).trim();

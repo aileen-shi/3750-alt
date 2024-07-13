@@ -1,4 +1,10 @@
 <?php
+/*
+    Aileen Shi
+    CPSC 3750
+    7/13/24
+    Sessions
+*/
 session_start();
 ?>
 <!DOCTYPE html>
@@ -9,6 +15,7 @@ session_start();
 </head>
 <body>
     <h1>Car Choice Page</h1>
+    <!--Gallery-->
     <div class="img-container">
         <img src="clown.jpg">
         <img src="minion.jpg">
@@ -18,6 +25,7 @@ session_start();
         <img src="duck.jpg">
         <img src="fish.jpg">
     </div>
+    <!--Session Array-->
     <?php
     if (isset($_POST['car'])) {
         if (!empty($_SESSION['products'])) {
@@ -28,9 +36,10 @@ session_start();
         } else {
             $_SESSION['products'] = serialize($_POST['car']);
     }
-    echo "<p>Your products have been registered!</p>";
+    echo "<p>Your cars have been registered!</p>";
     }
     ?>
+    <!--Form-->
     <div class="form-container">
     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
     <p><label for="car">Select some cars:</label><br>

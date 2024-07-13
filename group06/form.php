@@ -50,6 +50,13 @@
         echo "<img src='$fileTmpPath' alt='Uploaded File'>";
 
         // Note: Do not move_uploaded_file() here since we're displaying the file directly
+        $directory = '/../../tmp/';
+
+        if (is_readable($directory)) {
+            echo "Directory is readable.";
+        } else {
+            echo "Directory is not readable or does not exist.";
+        }
     }
     ?>
     <script src="../navbar.js"></script>

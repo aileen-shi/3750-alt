@@ -7,9 +7,11 @@
 */
 setcookie("first", "user", time()+3600, "/", ".aileenshi.com", 0);
 
-if (isset($_COOKIE['user'])) {
-	echo "<p>Hello again!</p>";
+if (!isset($_COOKIE['first'])) {
+    echo "<p>Hello, you. This may be your first visit.</p>";
+
 } else {
-	echo "<p>Hello, you. This may be your first visit.</p>";
+	echo "<p>Welcome back!</p>";
+    
 }
 ?>

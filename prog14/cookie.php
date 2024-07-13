@@ -24,8 +24,8 @@ echo "<p>Entered" . $_POST['numbers'] . "</p>";
 // Check these numbers
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo "<p>first if</p>";
-    //if (isset($_POST['numbers'])) {
-        //echo "<p>Entered val in text area</p>"
+    if (isset($_POST['numbers'])) {
+        echo "<p>Entered val in text area</p>"
         /*
         $nums = explode(' ', $_POST['numbers']);
     
@@ -33,6 +33,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo "<p>" . $num ."</p>"
         }
             */
-    //}
+    }
 }
 ?>

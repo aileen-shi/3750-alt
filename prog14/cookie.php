@@ -28,10 +28,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "<p>Entered val in text area</p>";
         $str = $_POST['numbers'];
         
-        $nums = explode(" ",$str);
+        $nums = explode(" ", $str);
     
         foreach($nums as $num) {
-            echo "<p>" . $num ."</p>"
+            echo "<p>" . $num ."</p>";
         }
             
     }

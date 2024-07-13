@@ -18,7 +18,7 @@ function checkNum() {
 
   // Send numbers
   ajaxreq.open("POST", "cookie.php", true);
-  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  ajaxreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   ajaxreq.send("numbers=" + encodeURIComponent(numbers));
 }
 
@@ -34,7 +34,7 @@ function showList(listType) {
 
   // Send request for desired list
   ajaxreq.open("POST", "show.php", true);
-  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  ajaxreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   ajaxreq.send("type=" + encodeURIComponent(listType));
 }
 
@@ -50,6 +50,6 @@ function reset() {
 
   // Send request for resetting
   ajaxreq.open("POST", "reset.php", true);
-  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  ajaxreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   ajaxreq.send();
 }

@@ -16,6 +16,12 @@ img {
 }
 
 .form-container {
+  display: flex;
+  align-items: center;
   margin-left: 10%;
-  margin-top: 300px;
+  margin-top: 10%;
+}
+
+select {
+  flex-grow: 1;
 }

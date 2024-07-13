@@ -26,8 +26,12 @@ function setupGame(word) {
   if (document.getElementById("cheat").checked) {
     alert(word);
   }
+
+  // Reset global variables
   right = 0;
   wrong = 1;
+  guess = "";
+  attempted = [];
   // Initial image
   const image = document.getElementById("player");
   // Create if doesnt exist

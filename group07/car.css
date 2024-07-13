@@ -17,9 +17,5 @@ img {
 
 .form-container {
   margin-left: 10%;
-  margin-top: 10%;
-}
-
-select {
-  z-index: 10;
+  margin-top: 300px;
 }

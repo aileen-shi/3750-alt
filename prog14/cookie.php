@@ -15,19 +15,21 @@ if (!isset($_COOKIE['first'])) {
     
 }
 
+/*
 // Check form
 // Check these numbers
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo "<p>" . Entered FIRST IF ."</p>"
     if (isset($_POST['check'])) {
         echo "<p>" . Entered val in text area ."</p>"
-        /*
+        
         $nums = explode(' ', $_POST['check']);
     
         foreach($nums as $num) {
             echo "<p>" . $num ."</p>"
         }
-            */
+            
     }
 }
+*/
 ?>

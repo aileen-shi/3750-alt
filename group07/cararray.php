@@ -34,7 +34,7 @@ session_start();
     <div class="form-container">
     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
     <p><label for="car">Select some cars:</label><br>
-    <select id="car" name="car[]" multiple="multiple" size="7">
+    <select id="car" name="car[]" multiple="multiple">
         <option value="Clown">Clown</option>
         <option value="Minion">Minion</option>
         <option value="Fuzzy">Fuzzy</option>

@@ -14,14 +14,3 @@ img {
   max-height: 300px;
   object-fit: cover;
 }
-
-.form-container {
-  display: flex;
-  align-items: center;
-  margin-left: 10%;
-  margin-top: 10%;
-}
-
-select {
-  flex-grow: 1;
-}

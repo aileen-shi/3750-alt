@@ -26,7 +26,7 @@ session_start();
 	<form method="post" action="">
 		<button type="submit" name="clear" value="clear">Clear</button>
 	</form>
-	<p><a href="cararray.php">return to product choice page</a></p>
+	<p><a href="cararray.php">Return to product choice page</a></p>
 	<script src="../navbar.js"></script>
 </body>
 </html>

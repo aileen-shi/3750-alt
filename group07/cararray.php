@@ -5,9 +5,19 @@ session_start();
 <html>
 <head>
     <title>Sessions</title>
+    <link rel="stylesheet" href="car.css">
 </head>
 <body>
     <h1>Car Choice Page</h1>
+    <div class="img-container">
+        <img src="clown.jpg">
+        <img src="minion.jpg">
+        <img src="fuzzy.jpg">
+        <img src="pea.jpg">
+        <img src="pizza.png">
+        <img src="duck.jpg">
+        <img src="fish.jpg">
+    </div>
     <?php
     if (isset($_POST['car'])) {
         if (!empty($_SESSION['products'])) {
@@ -22,7 +32,7 @@ session_start();
     }
     ?>
     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-    <p><label for="car">Select some products:</label><br>
+    <p><label for="car">Select some cars:</label><br>
     <select id="car" name="car[]" multiple="multiple" size="7">
         <option value="Clown">Clown</option>
         <option value="Minion">Minion</option>
@@ -34,7 +44,7 @@ session_start();
     </select></p>
     <button type="submit" name="submit" value="choose">Submit Form</button>
     </form>
-    <p><a href="session.php">go to content page</a></p>
+    <p><a href="session.php">Go to content page</a></p>
     <script src="../navbar.js"></script>
 </body>
 </html>

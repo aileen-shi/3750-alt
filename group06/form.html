@@ -32,11 +32,18 @@
             rows="7"
             cols="50"
             placeholder="Example: Gizmo is an orange cat"
+            required
           ></textarea>
         </p>
         <p>
-          <label for="passoword">Password:</label>
-          <input type="password" id="password" class="password" size="20" />
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            class="password"
+            size="20"
+            required
+          />
         </p>
         <p>
           <span class="question">What kind of pet do you have?</span><br />
@@ -82,11 +89,11 @@
             ><span class="question">How did you hear about us?</span></label
           ><br />
           <select id="ref" name="ref">
-            <option value="1">Google</option>
-            <option value="2">Facebook</option>
-            <option value="3">Instagram</option>
-            <option value="4">TikTok</option>
-            <option value="5">Word of Mouth</option>
+            <option value="Google">Google</option>
+            <option value="Facebook">Facebook</option>
+            <option value="Instagram">Instagram</option>
+            <option value="TikTok">TikTok</option>
+            <option value="Word of Mouth">Word of Mouth</option>
           </select>
         </p>
         <p>
@@ -96,6 +103,7 @@
             id="upload"
             name="upload"
             accept="image/png, image/jpeg"
+            required
           />
         </p>
         <p>

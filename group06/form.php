@@ -30,18 +30,6 @@
     <h2>You Heard Us From</h2>
     <p><?php echo $_POST['ref'] ?></p>
     <h2>Referral Link</h2>
-    <?php 
-    if (!empty($_POST['link'])) {
-        $url = filter_var($_POST['link'], FILTER_SANITIZE_URL);
-            
-        // Display the submitted URL
-        echo "<p>Submitted URL: <a href=\"$url\" target=\"_blank\">$url</a></p>";
-    }
-    else {
-        echo "None"
-    }
-    ?>
-    <h2>Image</h2>
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!empty($_POST['url'])) {
@@ -52,6 +40,20 @@
         }
     } else {
         echo "<p>Invalid request method.</p>";
+    }
+    ?>
+    <h2>Image</h2>
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["upload"])) {
+        $fileTmpPath = $_FILES["upload"]["tmp_name"];
+        $filePath = "/../../../.." . $fileTmpPath;
+
+        // Check if file exists and display it
+        if (file_exists($filePath)) {
+            echo "<img src='$filePath' alt='Uploaded File'>";
+        } else {
+            echo "File not found: $filePath";
+        }
     }
     ?>
     <script src="../navbar.js"></script>

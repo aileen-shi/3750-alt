@@ -15,6 +15,8 @@ if (!isset($_COOKIE['first'])) {
     
 }
 
+echo "<p>Entered" . $_POST['check'] . "</p>";
+
 /*
 // Check form
 // Check these numbers

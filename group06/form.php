@@ -45,6 +45,7 @@
                 // Here you can further process the uploaded file, like storing its path in a database, etc.
             } else {
                 echo "Error uploading file.";
+                echo "Move operation failed: " . $_FILES["upload"]["error"];
             }
         } else {
             // Handle cases where no file was uploaded or an error occurred

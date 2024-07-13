@@ -32,7 +32,7 @@
     <h2>Referral Link</h2>
     <p><?php 
     if (!$_POST['link']) {
-        echo $_POST['ref']
+        echo $_POST['link']
     }
     else {
         echo "None"

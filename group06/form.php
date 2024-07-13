@@ -19,12 +19,12 @@
     if (!empty($_POST['health'])) {
         echo '<ul>';
         foreach($_POST['health'] as $condition) {
-            echo '<li>' . $condition . '</li>';
+            echo '<li>' . htmlspecialchars($condition) . '</li>';
         }
         echo '</ul>';
     }
     else {
-        echo '<p>None</p>'
+        echo '<p>None</p>';
     }
     ?>
     <script src="../navbar.js"></script>

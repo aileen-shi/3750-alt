@@ -84,10 +84,14 @@ function guessLetter(letter) {
     // Correct
     else {
       right++;
+      let update = "";
       for (let i = 0; i < answer.length; i++) {
         if (answer[i] == letter) {
-          guess[i] = letter;
+          update += letter;
+        } else {
+          update += guess;
         }
+        guess = update;
         console.log(guess);
         wordToGuess.innerHTML = guess;
         if (right == answer.length) {

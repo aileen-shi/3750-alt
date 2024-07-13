@@ -32,6 +32,13 @@
     $targetDir = "../../uploads/";
     $targetFile = $targetDir . ($_FILES["image"]["name"]);
 
+    if (isset($_FILES["image"]) && $_FILES["image"]["error"] == UPLOAD_ERR_OK) {
+        // Display file details
+        echo "Uploaded file: " . $_FILES["image"]["name"] . "<br>";
+        echo "File type: " . $_FILES["image"]["type"] . "<br>";
+        echo "File size: " . $_FILES["image"]["size"] . " bytes<br>";
+    }
+
     if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
         // File moved successfully, do further processing or display
         echo "The file ". htmlspecialchars(basename($_FILES["image"]["name"])). " has been uploaded.";
@@ -41,7 +48,7 @@
         // Error moving file
         echo "Sorry, there was an error uploading your file.";
     }
-    
+
     ?>
     <script src="../navbar.js"></script>
 </body>

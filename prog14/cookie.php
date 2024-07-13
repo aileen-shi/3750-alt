@@ -34,6 +34,18 @@ function armstrong($num) {
     return $sum == $num;
 }
 
+// Check fibonacci
+function fibonacci($num) {
+    $a = 0;
+    $b = 1;
+    while($a < $num) {
+        $temp = $a;
+        $a = $b;
+        $b += $temp;
+    }
+    return $a == $num;
+}
+
 // Check form
 // Check these numbers
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -43,12 +55,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $nums = explode(" ", $str);
     
         foreach($nums as $num) {
+            $none = True;
             // Check if armstrong
             if (armstrong($num)) {
-                echo "<p>armstrong num</p>";
+                $none = False;
             }
-            else {
-                echo "<p>not armstrong num</p>";
+            if (fibonacci($num)) {
+                echo "<p>fib</p>";
+            }
+            if ($none) {
+                
             }
         }
             

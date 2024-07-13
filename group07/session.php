@@ -8,6 +8,12 @@ session_start();
 </head>
 <body>
 	<h1>Content Page</h1>
+	<?php 
+	if (isset($_POST['clear'])) {
+		session_destroy();
+		unset($_SESSION['products']);
+	}
+	?>
 	<?php
 	if (isset($_SESSION['products'])) {
 		echo "<strong>Your cars:</strong><ol>";
@@ -17,6 +23,9 @@ session_start();
 		echo "</ol>";
 	}
 	?>
+	<form method="post" action="">
+		<button type="submit" name="clear" value="clear">Clear</button>
+	</form>
 	<p><a href="cararray.php">return to product choice page</a></p>
 	<script src="../navbar.js"></script>
 </body>

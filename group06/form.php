@@ -12,6 +12,8 @@
     <p><?php echo $_POST['description']; ?></p>
     <h2>Password:</h2>
     <p><?php echo $_POST['password']; ?></p>
+    <h2>Species:</h2>
+    <p><?php echo $_POST['species']; ?></p>
     <script src="../navbar.js"></script>
 </body>
 </html>

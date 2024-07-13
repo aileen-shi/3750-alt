@@ -29,36 +29,6 @@
     ?>
     <h2>You Heard Us From</h2>
     <p><?php echo $_POST['ref'] ?></p>
-    <h2>Image</h2>
-    <?php
-
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["upload"])) {
-        $fileTmpPath = $_FILES["upload"]["tmp_name"];
-        $filePath = "/../../../.." . $fileTmpPath;
-        $fileName = $_FILES["upload"]["name"];
-        $fileSize = $_FILES["upload"]["size"];
-        $fileType = $_FILES["upload"]["type"];
-
-        // Display uploaded file details
-        echo "<h2>Uploaded File Details:</h2>";
-        echo "<p>Name: $fileName</p>";
-        echo "<p>Type: $fileType</p>";
-        echo "<p>Size: $fileSize bytes</p>";
-        echo "<p>Temporary Path: $filePath</p>";
-        echo "<p>Path: $filePath</p>";
-
-        // Check if file exists and display it
-        if (file_exists($filePath)) {
-            echo "<h2>Uploaded File Content:</h2>";
-            echo "<img src='$filePath' alt='Uploaded File'>";
-        } else {
-            echo "File not found: $filePath";
-        }
-    }
-    ?>
     <h2>Referral Link</h2>
     <p><?php 
     if (!$_POST['link']) {
@@ -70,6 +40,19 @@
     ?>
     </p>
     <h2>Image</h2>
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["upload"])) {
+        $fileTmpPath = $_FILES["upload"]["tmp_name"];
+        $filePath = "/../../../.." . $fileTmpPath;
+
+        // Check if file exists and display it
+        if (file_exists($filePath)) {
+            echo "<img src='$filePath' alt='Uploaded File'>";
+        } else {
+            echo "File not found: $filePath";
+        }
+    }
+    ?>
     <script src="../navbar.js"></script>
 </body>
 </html>

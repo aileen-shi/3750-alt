@@ -32,20 +32,31 @@
     <h2>Image</h2>
     <?php
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["upload"])) {
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
 
-        // Display the file content (for example, an image)
-        echo "<h2>Uploaded File Content:</h2>";
-        echo "<img src='$filePath' alt='Uploaded File'>";
-    }
-    ?>
-    <h2>URL</h2>
-    <?php
-    if (!empty($_POST['link'])) {
-        echo '<p>' . $_POST['link'] . '</p>';
-    }
-    else {
-        echo '<p>None</p>';
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["uploadFile"])) {
+        $fileTmpPath = $_FILES["uploadFile"]["tmp_name"];
+        $filePath = "/../../../../" . $fileTmpPath;
+        $fileName = $_FILES["uploadFile"]["name"];
+        $fileSize = $_FILES["uploadFile"]["size"];
+        $fileType = $_FILES["uploadFile"]["type"];
+
+        // Display uploaded file details
+        echo "<h2>Uploaded File Details:</h2>";
+        echo "<p>Name: $fileName</p>";
+        echo "<p>Type: $fileType</p>";
+        echo "<p>Size: $fileSize bytes</p>";
+        echo "<p>Temporary Path: $fileTmpPath</p>";
+        echo "<p>Path: $filePath</p>";
+
+        // Check if file exists and display it
+        if (file_exists($fileTmpPath)) {
+            echo "<h2>Uploaded File Content:</h2>";
+            echo "<img src='$fileTmpPath' alt='Uploaded File'>";
+        } else {
+            echo "File not found: $fileTmpPath";
+        }
     }
     ?>
     <script src="../navbar.js"></script>

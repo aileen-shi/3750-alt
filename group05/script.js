@@ -79,6 +79,7 @@ function guessLetter(letter) {
     for (let i = right; i < answer.length; i++) {
       remaining[i] = " _";
     }
+    console.log(remaining);
     wordToGuess.innerHTML = remaining;
     if (right == answer.length) {
       alert("YOU WIN");

@@ -75,12 +75,13 @@ function guessLetter(letter) {
   // Correct
   else {
     right++;
-    let remaining = answer;
+    let remaining = "";
     for (let i = 0; i < answer.length; i++) {
       if (i < right) {
         remaining[i] = answer[i];
       } else {
         remaining[i] = " _";
+        console.log(remaining[i]);
       }
     }
     console.log(remaining);

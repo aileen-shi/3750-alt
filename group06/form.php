@@ -27,38 +27,25 @@
         echo '<p>None</p>';
     }
     ?>
+    <h2>You Heard Us From</h2>
+    <p><?php echo $_POST['ref'] ?></p>
     <h2>Image</h2>
     <?php
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
 
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["upload"])) {
-        $fileTmpPath = $_FILES["upload"]["tmp_name"];
-        $filePath = "/../../.." . $fileTmpPath;
-        $fileName = $_FILES["upload"]["name"];
-        $fileSize = $_FILES["upload"]["size"];
-        $fileType = $_FILES["upload"]["type"];
-
-        // Display uploaded file details
-        echo "<h2>Uploaded File Details:</h2>";
-        echo "<p>Name: $fileName</p>";
-        echo "<p>Type: $fileType</p>";
-        echo "<p>Size: $fileSize bytes</p>";
-        echo "<p>Temporary Path: $fileTmpPath</p>";
-        echo "<p>new path: $filePath</p>";
 
         // Display the file content (for example, an image)
         echo "<h2>Uploaded File Content:</h2>";
         echo "<img src='$filePath' alt='Uploaded File'>";
-
-        // Note: Do not move_uploaded_file() here since we're displaying the file directly
-        $directory = '/../../tmp/';
-
-        if (is_readable($directory)) {
-            echo "Directory is readable.";
-        } else {
-            echo "Directory is not readable or does not exist.";
-        }
+    }
+    ?>
+    <h2>URL</h2>
+    <?php
+    if (!empty($_POST['link'])) {
+        echo '<p>' . $_POST['link'] . '</p>';
+    }
+    else {
+        echo '<p>None</p>';
     }
     ?>
     <script src="../navbar.js"></script>

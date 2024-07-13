@@ -15,7 +15,8 @@ img {
   object-fit: cover;
 }
 
-label {
+label,
+select {
   display: inline;
   padding-right: 5px;
 }

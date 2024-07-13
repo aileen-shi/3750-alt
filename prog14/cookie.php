@@ -22,7 +22,7 @@ if (!isset($_COOKIE['first'])) {
 function armstrong($num) {
     echo "<p>HERE</p>";
     //$sum = 0;
-    $n = strlen((string), $num);
+    $n = strlen((string)$num);
 
     //foreach($num as $digit) {
         //$temp = pow($digit, $n);

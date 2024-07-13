@@ -30,7 +30,7 @@
     <h2>You Heard Us From</h2>
     <p><?php echo $_POST['ref'] ?></p>
     <h2>Referral Link</h2>
-    <p><?php 
+    <?php 
     if (!empty($_POST['link'])) {
         $url = filter_var($_POST['link'], FILTER_SANITIZE_URL);
             
@@ -41,7 +41,6 @@
         echo "None"
     }
     ?>
-    </p>
     <h2>Image</h2>
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["upload"])) {

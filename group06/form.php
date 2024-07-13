@@ -29,28 +29,24 @@
     ?>
     <h2>Image</h2>
     <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
-        // Check if file was uploaded without errors
-        if (isset($_FILES["upload"]) && $_FILES["upload"]["error"] == UPLOAD_ERR_OK) {
-            // File uploaded successfully, process it
-            $uploadDir = '/../../uploads/';  // Directory where uploaded files will be stored
-            $targetFile = $uploadDir . basename($_FILES["upload"]["name"]); // Full path to the uploaded file
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["uploadFile"])) {
+        $fileTmpPath = $_FILES["uploadFile"]["tmp_name"];
+        $fileName = $_FILES["uploadFile"]["name"];
+        $fileSize = $_FILES["uploadFile"]["size"];
+        $fileType = $_FILES["uploadFile"]["type"];
 
-            echo "Upload Directory: " . $uploadDir . "<br>";
-            echo "Target File: " . $targetFile . "<br>";
-            
-            // Move the uploaded file from temporary directory to target directory
-            if (move_uploaded_file($_FILES["upload"]["tmp_name"], $targetFile)) {
-                echo "File is uploaded successfully.";
-                // Here you can further process the uploaded file, like storing its path in a database, etc.
-            } else {
-                echo "Error uploading file.";
-                echo "Move operation failed: " . $_FILES["upload"]["error"];
-            }
-        } else {
-            // Handle cases where no file was uploaded or an error occurred
-            echo "No file uploaded or an error occurred.";
-        }
+        // Display uploaded file
+        echo "<h2>Uploaded File Details:</h2>";
+        echo "<p>Name: $fileName</p>";
+        echo "<p>Type: $fileType</p>";
+        echo "<p>Size: $fileSize bytes</p>";
+        echo "<p>Temporary Path: $fileTmpPath</p>";
+
+        // Display the file content (for example, an image)
+        echo "<h2>Uploaded File Content:</h2>";
+        echo "<img src='$fileTmpPath' alt='Uploaded File'>";
+
+        // Note: Do not move_uploaded_file() here since we're displaying the file directly
     }
     ?>
     <script src="../navbar.js"></script>

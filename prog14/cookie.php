@@ -46,6 +46,23 @@ function fibonacci($num) {
     return $a == $num;
 }
 
+// Check prime
+function prime($num, $i) {
+    if ($num == 0 || $num == 1) {
+        return False;
+    }
+
+    if ($num == $i) {
+        return True;
+    }
+
+    if ($num % $i == 0) {
+        return False;
+    }
+    $i++;
+    prime($num, $i);
+}
+
 // Check form
 // Check these numbers
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -64,6 +81,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
             if (fibonacci($num)) {
                 echo "<p>fib</p>";
+                $none = False;
+            }
+            if (prime($num, 2)) {
+                echo "<p>prime</p>";
                 $none = False;
             }
             if ($none) {

@@ -76,12 +76,11 @@ function guessLetter(letter) {
   else {
     right++;
     let remaining = "";
-    remaining = answer;
     for (let i = 0; i < answer.length; i++) {
       if (i < right) {
-        remaining[i] = answer[i];
+        remaining += answer[i];
       } else {
-        remaining[i] = " _";
+        remaining += " _";
         console.log(remaining[i]);
       }
     }

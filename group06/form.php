@@ -29,7 +29,19 @@
     ?>
     <h2>Image</h2>
     <?php
-    phpinfo();
+    $targetDir = "../../uploads/";
+    $targetFile = $targetDir . ($_FILES["image"]["name"]);
+
+    if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
+        // File moved successfully, do further processing or display
+        echo "The file ". htmlspecialchars(basename($_FILES["image"]["name"])). " has been uploaded.";
+        echo "<br>";
+        echo '<img src="' . $targetFile . '" alt="Uploaded Image">';
+    } else {
+        // Error moving file
+        echo "Sorry, there was an error uploading your file.";
+    }
+    
     ?>
     <script src="../navbar.js"></script>
 </body>

@@ -29,27 +29,25 @@
     ?>
     <h2>Image</h2>
     <?php
-    $targetDir = "../../uploads/";
-    $targetFile = $targetDir . ($_FILES["image"]["name"]);
-
-    if (isset($_FILES["image"]) && $_FILES["image"]["error"] == UPLOAD_ERR_OK) {
-        // Display file details
-        echo "Uploaded file: " . $_FILES["image"]["name"] . "<br>";
-        echo "File type: " . $_FILES["image"]["type"] . "<br>";
-        echo "File size: " . $_FILES["image"]["size"] . " bytes<br>";
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
+        // Check if file was uploaded without errors
+        if (isset($_FILES["upload"]) && $_FILES["upload"]["error"] == UPLOAD_ERR_OK) {
+            // File uploaded successfully, process it
+            $uploadDir = __DIR__ . '../../uploads/';  // Directory where uploaded files will be stored
+            $targetFile = $uploadDir . basename($_FILES["upload"]["name"]); // Full path to the uploaded file
+            
+            // Move the uploaded file from temporary directory to target directory
+            if (move_uploaded_file($_FILES["upload"]["tmp_name"], $targetFile)) {
+                echo "File is uploaded successfully.";
+                // Here you can further process the uploaded file, like storing its path in a database, etc.
+            } else {
+                echo "Error uploading file.";
+            }
+        } else {
+            // Handle cases where no file was uploaded or an error occurred
+            echo "No file uploaded or an error occurred.";
+        }
     }
-
-    if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
-        // File moved successfully, do further processing or display
-        echo "The file ". htmlspecialchars(basename($_FILES["image"]["name"])). " has been uploaded.";
-        echo "<br>";
-        echo '<img src="' . $targetFile . '" alt="Uploaded Image">';
-    } else {
-        // Error moving file
-        echo "Sorry, there was an error uploading your file.";
-    }
-
-    ?>
     <script src="../navbar.js"></script>
 </body>
 </html>

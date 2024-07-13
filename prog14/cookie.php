@@ -14,4 +14,14 @@ if (!isset($_COOKIE['first'])) {
 	echo "<p>Welcome back!</p>";
     
 }
+
+// Check form
+// Check these numbers
+if (isset($_POST['check'])) {
+    $nums = explode(' ', $_POST['check']);
+
+    foreach($nums as $num) {
+        echo "<p>" . $num ."</p>"
+    }
+}
 ?>

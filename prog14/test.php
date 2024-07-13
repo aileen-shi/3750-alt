@@ -1,6 +1,6 @@
 <?php
+// Set cookie
 setcookie("vegetable", "artichoke", time()+3600, "/", ".aileenshi.com", 0);
-
 if (isset($_COOKIE['vegetable'])) {
 	echo "<p>Hello again! You have chosen: ".$_COOKIE['vegetable'].".</p>";
 } else {

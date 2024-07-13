@@ -34,6 +34,7 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["upload"])) {
         $fileTmpPath = $_FILES["upload"]["tmp_name"];
+        $filePath = $_SERVER['DOCUMENT_ROOT'] . $fileTmpPath;
         $fileName = $_FILES["upload"]["name"];
         $fileSize = $_FILES["upload"]["size"];
         $fileType = $_FILES["upload"]["type"];
@@ -44,6 +45,7 @@
         echo "<p>Type: $fileType</p>";
         echo "<p>Size: $fileSize bytes</p>";
         echo "<p>Temporary Path: $fileTmpPath</p>";
+        echo "<p>new path: $filePath</p>";
 
         // Display the file content (for example, an image)
         echo "<h2>Uploaded File Content:</h2>";

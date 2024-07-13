@@ -15,13 +15,3 @@ img {
   object-fit: cover;
   visibility: hidden;
 }
-
-label,
-select {
-  display: inline;
-  padding-right: 5px;
-}
-
-select {
-  margin-top: 50px;
-}

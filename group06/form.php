@@ -49,7 +49,7 @@
 
         // Display the file content (for example, an image)
         echo "<h2>Uploaded File Content:</h2>";
-        echo "<img src='$fileTmpPath' alt='Uploaded File'>";
+        echo "<img src='$filePath' alt='Uploaded File'>";
 
         // Note: Do not move_uploaded_file() here since we're displaying the file directly
         $directory = '/../../tmp/';

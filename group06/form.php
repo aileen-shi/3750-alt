@@ -33,7 +33,7 @@
         // Check if file was uploaded without errors
         if (isset($_FILES["upload"]) && $_FILES["upload"]["error"] == UPLOAD_ERR_OK) {
             // File uploaded successfully, process it
-            $uploadDir = '../../uploads/';  // Directory where uploaded files will be stored
+            $uploadDir = '/../../uploads/';  // Directory where uploaded files will be stored
             $targetFile = $uploadDir . basename($_FILES["upload"]["name"]); // Full path to the uploaded file
 
             echo "Upload Directory: " . $uploadDir . "<br>";

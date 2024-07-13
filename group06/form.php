@@ -14,6 +14,19 @@
     <p><?php echo $_POST['password']; ?></p>
     <h2>Species:</h2>
     <p><?php echo $_POST['species']; ?></p>
+    <h2>Conditions:</h2>
+    <?php 
+    if (!empty($_POST[health])) {
+        echo '<ul>';
+        foreach($_POST[health] as $condition) {
+            echo '<li>' . $condition . '</li>';
+        }
+        echo '</ul>';
+    }
+    else {
+        echo '<p>None</p>'
+    }
+    ?>
     <script src="../navbar.js"></script>
 </body>
 </html>

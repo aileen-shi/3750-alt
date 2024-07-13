@@ -10,6 +10,8 @@
     <p><strong><?php echo $_POST['name']; ?></strong> has been registered</p>
     <h2>Description:</h2>
     <p><?php echo $_POST['description']; ?></p>
+    <h2>Password:</h2>
+    <p><?php echo $_POST['password']; ?></p>
     <script src="../navbar.js"></script>
 </body>
 </html>

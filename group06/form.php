@@ -35,6 +35,9 @@
             // File uploaded successfully, process it
             $uploadDir = '../../uploads/';  // Directory where uploaded files will be stored
             $targetFile = $uploadDir . basename($_FILES["upload"]["name"]); // Full path to the uploaded file
+
+            echo "Upload Directory: " . $uploadDir . "<br>";
+            echo "Target File: " . $targetFile . "<br>";
             
             // Move the uploaded file from temporary directory to target directory
             if (move_uploaded_file($_FILES["upload"]["tmp_name"], $targetFile)) {

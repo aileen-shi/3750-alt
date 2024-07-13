@@ -1,8 +1,9 @@
 // Current word
 let answer = "";
+let guess = "";
 let wrong = 1;
-let index = 0;
 let right = 0;
+let attempted = [];
 
 function startGame() {
   // Fetch a new word from the server
@@ -41,6 +42,7 @@ function setupGame(word) {
 
   const wordToGuess = document.getElementById("wordToGuess");
   wordToGuess.innerHTML = "_ ".repeat(word.length).trim();
+  guess = wordToGuess.innerHTML;
   generateLetterButtons();
 }
 
@@ -62,37 +64,36 @@ function guessLetter(letter) {
   const wordToGuess = document.getElementById("wordToGuess");
   console.log(answer[right]);
 
-  // Incorrect guess
-  if (letter != answer[right]) {
-    wrong++;
-    // Update image
-    image.src = wrong + ".png";
-    console.log("incorrect ", letter);
-    console.log();
-    // Game over
-    if (wrong == 11) {
-      alert("GAME OVER");
-    }
-  }
-  // Correct
-  else {
-    right++;
-    let remaining = "";
-    for (let i = 0; i < answer.length; i++) {
-      if (i < right) {
-        remaining += answer[i];
-      } else {
-        remaining += " _";
-        console.log(remaining[i]);
+  // Check if new guess
+  if (!attempted.includes(letter)) {
+    // Add to attempted list
+    attempted.push(letter);
+
+    // Incorrect guess
+    if (!answer.includes(letter)) {
+      wrong++;
+      // Update image
+      image.src = wrong + ".png";
+      console.log("incorrect ", letter);
+      console.log();
+      // Game over
+      if (wrong == 11) {
+        alert("GAME OVER");
       }
     }
-    console.log(remaining);
-    wordToGuess.innerHTML = remaining;
-    if (right == answer.length) {
-      alert("YOU WIN");
+    // Correct
+    else {
+      right++;
+      for (let i = 0; i < answer.length; i++) {
+        if (answer[i] == letter) {
+          guess[i] = letter;
+        }
+        console.log(guess);
+        wordToGuess.innerHTML = guess;
+        if (right == answer.length) {
+          alert("YOU WIN");
+        }
+      }
     }
   }
 }
-
-// Initially start the game
-//startGame();

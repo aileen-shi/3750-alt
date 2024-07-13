@@ -76,8 +76,12 @@ function guessLetter(letter) {
   else {
     right++;
     let remaining = answer;
-    for (let i = right; i < answer.length; i++) {
-      remaining[i] = " _";
+    for (let i = 0; i < answer.length; i++) {
+      if (i < right) {
+        remaining[i] = answer[i];
+      } else {
+        remaining[i] = " _";
+      }
     }
     console.log(remaining);
     wordToGuess.innerHTML = remaining;

@@ -86,7 +86,7 @@ function guessLetter(letter) {
       right++;
       let update = "";
       for (let i = 0; i < answer.length; i++) {
-        console.log(update);
+        console.log(update, " answer[i] ", answer[i], " guess[i]", guess[i]);
         if (answer[i] == letter) {
           update += letter;
         } else {

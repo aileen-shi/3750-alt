@@ -55,16 +55,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $nums = explode(" ", $str);
     
         foreach($nums as $num) {
+            echo "<p>current num " . $num . "</p>";
             $none = True;
             // Check if armstrong
             if (armstrong($num)) {
+                echo "<p>armstrong</p>";
                 $none = False;
             }
             if (fibonacci($num)) {
                 echo "<p>fib</p>";
+                $none = False;
             }
             if ($none) {
-                
+                echo "<p>none</p>";
             }
         }
             

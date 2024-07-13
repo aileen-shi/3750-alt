@@ -31,6 +31,7 @@ session_start();
     echo "<p>Your products have been registered!</p>";
     }
     ?>
+    <div class="form-container">
     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
     <p><label for="car">Select some cars:</label><br>
     <select id="car" name="car[]" multiple="multiple" size="7">
@@ -45,6 +46,7 @@ session_start();
     <button type="submit" name="submit" value="choose">Submit Form</button>
     </form>
     <p><a href="session.php">Go to content page</a></p>
+    </div>
     <script src="../navbar.js"></script>
 </body>
 </html>

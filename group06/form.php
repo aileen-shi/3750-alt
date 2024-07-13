@@ -32,9 +32,6 @@
     echo $_POST['ref'];
     ?>
     <h2>Pet Image</h2>
-    <?php
-    readfile($_FILES['upload']['tmp']);
-    ?>
      <script src="../navbar.js"></script>
 </body>
 </html>

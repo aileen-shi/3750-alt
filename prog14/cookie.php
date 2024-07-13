@@ -25,7 +25,7 @@ function armstrong($num) {
     $array = str_split($num);
 
     for($i = 0; $i < $n; $i++) {
-        $temp = pow($array[$i], $n);
+        $temp = pow((int)$array[$i], $n);
         echo "<p>" . $temp . "</p>";
     }
 }

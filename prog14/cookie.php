@@ -18,3 +18,7 @@ if (!isset($_COOKIE['visitor'])) {
 
     echo "<p>Welcome first time visitor</p>"
 }
+else {
+    echo "<p>Welcome back</p>"
+}
+?>

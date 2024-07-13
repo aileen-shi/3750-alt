@@ -6,9 +6,8 @@
     <title>Form Response</title>
 </head>
 <body>
-    <p>
-    <?php echo "hello world" ?>
-    </p>
+    <h1>Welcome!<h1>
+    <p><strong><?php echo $_POST['name']; ?></strong> has been registered</p>
      <script src="../navbar.js"></script>
 </body>
 </html>

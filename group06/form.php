@@ -43,16 +43,15 @@
     ?>
     <h2>Image</h2>
     <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["upload"])) {
-        $fileTmpPath = $_FILES["upload"]["tmp_name"];
-        $filePath = "/../../../.." . $fileTmpPath;
-
-        // Check if file exists and display it
-        if (file_exists($filePath)) {
-            echo "<img src='$filePath' alt='Uploaded File'>";
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (!empty($_POST['url'])) {
+            $url = filter_var($_POST['url'], FILTER_SANITIZE_URL);
+            echo "<p>Submitted URL: <a href=\"$url\" target=\"_blank\">$url</a></p>";
         } else {
-            echo "File not found: $filePath";
+            echo "<p>No URL submitted.</p>";
         }
+    } else {
+        echo "<p>Invalid request method.</p>";
     }
     ?>
     <script src="../navbar.js"></script>

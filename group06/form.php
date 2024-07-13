@@ -16,9 +16,9 @@
     <p><?php echo $_POST['species']; ?></p>
     <h2>Conditions:</h2>
     <?php 
-    if (!empty($_POST[health])) {
+    if (!empty($_POST['health'])) {
         echo '<ul>';
-        foreach($_POST[health] as $condition) {
+        foreach($_POST['health'] as $condition) {
             echo '<li>' . $condition . '</li>';
         }
         echo '</ul>';

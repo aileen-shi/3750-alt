@@ -12,6 +12,14 @@ setcookie("first", "user", time()+3600, "/", ".aileenshi.com", 0);
 
 if (!isset($_COOKIE['first'])) {
     echo "<p>Hello, you. This may be your first visit.</p>";
+    $armstrong = fopen("armstrong.txt", "w");
+    fclose($armstrong);
+    $fibonacci = fopen("fibonacci.txt", "w");
+    fclose($fibonacci);
+    $prime = fopen("prime.txt", "w");
+    fclose($prime);
+    $none = fopen("none.txt", "w");
+    fclose($none);
 
 } else {
 	echo "<p>Welcome back!</p>";
@@ -72,23 +80,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $nums = explode(" ", $str);
     
         foreach($nums as $num) {
-            echo "<p>current num " . $num . "</p>";
             $none = True;
             // Check if armstrong
             if (armstrong($num)) {
-                echo "<p>armstrong</p>";
+                // Write
+                $armstrong = fopen("armstrong.txt", "a");
+                fwrite($armstrong, $num . "\n");
+                fclose($armstrong);
                 $none = False;
             }
             if (fibonacci($num)) {
-                echo "<p>fib</p>";
+                $fibonacci = fopen("fibonacci.txt", "a");
+                fwrite($fibonacci, $num . "\n");
+                fclose($fibonacci);
                 $none = False;
             }
             if (prime($num, 2)) {
-                echo "<p>prime</p>";
+                $prime = fopen("prime.txt", "a");
+                fwrite($prime, $num . "\n");
+                fclose($prime);
                 $none = False;
             }
             if ($none) {
-                echo "<p>none</p>";
+                $none = fopen("none.txt", "a");
+                fwrite($none, $num . "\n");
+                fclose($none);
             }
         }
             

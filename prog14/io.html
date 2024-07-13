@@ -4,12 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>File I/O</title>
+    <!--Send data with button click to php without going to php-->
+    <script type="text/javascript" src="cookie.js"></script>
   </head>
   <body>
     <h1>File I/O</h1>
 
     <!--Form-->
-    <form method="post" action="cookie.php">
+    <form id="numForm" onsubmit="event.preventDefault(); checkNum();">
       <p>
         <label for="numbers"> </label>
         <textarea
@@ -29,14 +31,20 @@
       />
     </form>
     <!--Buttons-->
-    <form method="post" action="cookie.php">
-      <input type="submit" name="armstrong" id="armstrong" value="ARMSTRONG" />
-      <input type="submit" name="fibonacci" id="fibonacci" value="FIBONACCI" />
-      <input type="submit" name="prime" id="prime" value="PRIME" />
-      <input type="submit" name="none" id="none" value="NONE" />
-      <input type="submit" name="reset" id="reset" value="RESET" />
-    </form>
+    <button onclick="showList(armstrong);">ARMSTRONG</button>
+    <button onclick="showList(prime);">PRIME</button>
+    <button onclick="showList(fibonacci);">FIBONACCI</button>
+    <button onclick="showList(none);">NONE</button>
+    <button onclick="showList(reset);">RESET</button>
+    <!--
+    <input type="submit" name="armstrong" id="armstrong" value="ARMSTRONG" />
+    <input type="submit" name="fibonacci" id="fibonacci" value="FIBONACCI" />
+    <input type="submit" name="prime" id="prime" value="PRIME" />
+    <input type="submit" name="none" id="none" value="NONE" />
+    <input type="submit" name="reset" id="reset" value="RESET" />
+-->
 
+    <div id="results"></div>
     <script src="../navbar.js"></script>
   </body>
 </html>

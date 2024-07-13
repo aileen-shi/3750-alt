@@ -14,3 +14,8 @@ img {
   max-height: 300px;
   object-fit: cover;
 }
+
+label {
+  display: inline;
+  padding-right: 5px;
+}

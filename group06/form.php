@@ -59,6 +59,17 @@
         }
     }
     ?>
+    <h2>Referral Link</h2>
+    <p><?php 
+    if (!$_POST['link']) {
+        echo $_POST['ref']
+    }
+    else {
+        echo "None"
+    }
+    ?>
+    </p>
+    <h2>Image</h2>
     <script src="../navbar.js"></script>
 </body>
 </html>

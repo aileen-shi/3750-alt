@@ -1,0 +1,60 @@
+/*
+    Aileen Shi
+    CPSC 3750
+    7/13/24
+    Project Audio
+*/
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
+h2 {
+  text-align: center;
+}
+audio {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.controls-container {
+  display: flex;
+  flex-direction: row;
+  margin: 15px auto;
+  width: 50%;
+  justify-content: space-around;
+}
+.track-container {
+  background-color: #b0b0b0;
+  border-radius: 5px;
+  width: 50%;
+  height: auto;
+  margin: 15px auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 20px;
+}
+.btn {
+  padding: 10px;
+}
+
+.track-txt {
+  flex-grow: 8;
+  text-align: center;
+}
+
+.track-btn {
+  flex-grow: 1;
+  border-radius: 5px;
+}
+
+.track-play {
+  background-color: #80ad6a;
+}
+
+.track-trash {
+  background-color: #f5909c;
+}

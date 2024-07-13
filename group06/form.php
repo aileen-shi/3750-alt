@@ -34,7 +34,7 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!empty($_POST['url'])) {
             $url = filter_var($_POST['url'], FILTER_SANITIZE_URL);
-            echo "<p>Submitted URL: <a href=\"$url\" target=\"_blank\">$url</a></p>";
+            echo "<a href=\"$url\" target=\"_blank\">$url</a>";
         } else {
             echo "<p>No URL submitted.</p>";
         }

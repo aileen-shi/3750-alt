@@ -83,12 +83,12 @@ function guessLetter(letter) {
     }
     // Correct
     else {
-      right++;
       let update = "";
       let guessSpace = "";
       for (let i = 0; i < answer.length; i++) {
         console.log(update, " answer[i] ", answer[i], " guess[i]", guess[i]);
         if (answer[i] == letter) {
+          right++;
           update += letter;
           guessSpace += letter;
         } else {

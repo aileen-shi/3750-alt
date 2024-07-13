@@ -20,12 +20,12 @@ if (!isset($_COOKIE['first'])) {
 
 // Check armstrong
 function armstrong($num) {
-    echo "<p>HERE</p>";
     $sum = 0;
     $n = strlen((string)$num);
+    $array = str_split($num);
 
-    foreach($num as $digit) {
-        $temp = pow($digit, $n);
+    for($i = 0; $i < $n; $i++) {
+        $temp = pow($array[$i], $n);
         echo "<p>" . $digit . "</p>";
     }
 }

@@ -94,12 +94,12 @@ function guessLetter(letter) {
           console.log(guess[i]);
         }
         update += " ";
-        guess = update;
-        console.log(guess);
-        wordToGuess.innerHTML = guess;
-        if (right == answer.length) {
-          alert("YOU WIN");
-        }
+      }
+      guess = update;
+      console.log(guess);
+      wordToGuess.innerHTML = guess;
+      if (right == answer.length) {
+        alert("YOU WIN");
       }
     }
   }

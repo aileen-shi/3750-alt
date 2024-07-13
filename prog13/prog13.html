@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON and AJAX</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>JSON and AJAX</h1>
+      <button id="btn">Fetch Info for 3 New Animals</button>
+    </header>
+    <div id="animal-info"></div>
+
+    <script id="petsTemplate" type="text/x-handlebars-template">
+      {{#each this}}
+        <h2>{{name}}</h2>
+        <p>Species: {{species}}</p>
+        <h3>Likes</h3>
+        <ul>
+          {{#each foods.likes}}
+            <li>{{this}}</li>
+          {{/each}}
+        </ul>
+        <h3>Dislikes</h3>
+        <ul>
+          {{#each foods.dislikes}}
+            <li>{{this}}</li>
+          {{/each}}
+        </ul>
+      {{/each}}
+    </script>
+
+    <script src="handlebars.js"></script>
+    <script src="main.js"></script>
+    <script src="../navbar.js"></script>
+  </body>
+</html>

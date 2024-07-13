@@ -48,3 +48,7 @@ body {
 .hidden {
   visibility: hidden;
 }
+
+#start {
+  margin-top: 20px;
+}

@@ -37,7 +37,7 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["upload"])) {
         $fileTmpPath = $_FILES["upload"]["tmp_name"];
-        $filePath = "/../../../../" . $fileTmpPath;
+        $filePath = "/../../../.." . $fileTmpPath;
         $fileName = $_FILES["upload"]["name"];
         $fileSize = $_FILES["upload"]["size"];
         $fileType = $_FILES["upload"]["type"];
@@ -47,7 +47,7 @@
         echo "<p>Name: $fileName</p>";
         echo "<p>Type: $fileType</p>";
         echo "<p>Size: $fileSize bytes</p>";
-        echo "<p>Temporary Path: $fileTmpPath</p>";
+        echo "<p>Temporary Path: $filePath</p>";
         echo "<p>Path: $filePath</p>";
 
         // Check if file exists and display it

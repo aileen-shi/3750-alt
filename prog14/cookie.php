@@ -20,13 +20,14 @@ if (!isset($_COOKIE['first'])) {
 
 // Check armstrong
 function armstrong($num) {
-    $sum = 0;
-    $n = strlen((string), $num);
+    echo "<p>HERE</p>";
+    //$sum = 0;
+    //$n = strlen((string), $num);
 
-    foreach($num as $digit) {
+    //foreach($num as $digit) {
         //$temp = pow($digit, $n);
-        echo "<p>" . $digit . "</p>";
-    }
+        //echo "<p>" . $digit . "</p>";
+    //}
 }
 
 // Check form

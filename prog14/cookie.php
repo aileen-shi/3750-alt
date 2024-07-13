@@ -5,19 +5,11 @@
     7/13/24
     PHP I/O
 */
-// Set cookie
-setcookie("visitor", "user", time() + 3600, "/", "aileenshi.com", 0);
+setcookie("vegetable", "artichoke", time()+3600, "/", ".aileenshi.com", 0);
 
-if (!isset($_COOKIE['visitor'])) {
-    // Create text files
-    file_put_contents('prime.txt', '');
-    file_put_contents('armstrong.txt', '');
-    file_put_contents('fibonacci.txt', '');
-    file_put_contents('none.txt', '');
-
-    echo "<p>Welcome first time visitor</p>"
-}
-else {
-    echo "<p>Welcome back</p>"
+if (isset($_COOKIE['vegetable'])) {
+	echo "<p>Hello again! You have chosen: ".$_COOKIE['vegetable'].".</p>";
+} else {
+	echo "<p>Hello, you. This may be your first visit.</p>";
 }
 ?>

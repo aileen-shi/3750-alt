@@ -19,5 +19,8 @@ label,
 select {
   display: inline;
   padding-right: 5px;
-  padding-top: 50px;
+}
+
+select {
+  margin-top: 50px;
 }

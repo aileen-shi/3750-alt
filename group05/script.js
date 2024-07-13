@@ -90,6 +90,7 @@ function guessLetter(letter) {
           update += letter;
         } else {
           update += guess[i];
+          console.log(guess[i]);
         }
         update += " ";
         guess = update;

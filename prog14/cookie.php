@@ -28,10 +28,10 @@ function armstrong($num) {
         $temp = pow((int)$array[$i], $n);
         //echo "<p>" . $temp . "</p>";
         // Update Sum
-        $sum += (int)$temp;
+        $sum += $temp;
     }
 
-    return if ($sum == $num);
+    return $sum == $num;
 }
 
 // Check form

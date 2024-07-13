@@ -20,12 +20,12 @@ session_start();
           $_SESSION['products'] = serialize($products);
       } else {
           $_SESSION['products'] = serialize($_POST['cars']);
-    }
+        }
      echo "<p>Your cars have been registered!</p>";
-  }
+    }
     ?>
     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-      <label for="cars">Choose a car:</label>
+      <p><label for="cars">Choose a car:</label>
       <select name="cars" id="cars" size="7" multiple>
         <option value="Clown">Clown</option>
         <option value="Minion">Minion</option>
@@ -35,6 +35,7 @@ session_start();
         <option value="Duck">Duck</option>
         <option value="Fish">Fish</option>
       </select>
+      </p>
       <br /><br />
       <input type="submit" value="Submit" />
     </form>

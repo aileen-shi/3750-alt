@@ -28,6 +28,7 @@ function setupGame(word) {
   const image = document.createElement("img");
   image.id = "player";
   image.src = "1.png";
+  document.getElementById("image-container").appendChild(image);
 
   const wordToGuess = document.getElementById("wordToGuess");
   wordToGuess.innerHTML = "_ ".repeat(word.length).trim();

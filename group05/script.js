@@ -1,6 +1,6 @@
 // Current word
 let answer = "";
-let wrong = 0;
+let wrong = 1;
 let index = 0;
 let right = 0;
 
@@ -10,6 +10,7 @@ function startGame() {
     .then((response) => response.json())
     .then((data) => {
       if (data.word) {
+        data.word = data.word.toUpperCase();
         answer = data.word;
         setupGame(data.word);
       } else {
@@ -65,6 +66,7 @@ function guessLetter(letter) {
     // Update image
     image.src = wrong + ".png";
     console.log("incorrect ", letter);
+    console.log();
     // Game over
     if (wrong == 11) {
       alert("GAME OVER");

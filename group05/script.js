@@ -85,19 +85,22 @@ function guessLetter(letter) {
     else {
       right++;
       let update = "";
+      let guessSpace = "";
       for (let i = 0; i < answer.length; i++) {
         console.log(update, " answer[i] ", answer[i], " guess[i]", guess[i]);
         if (answer[i] == letter) {
           update += letter;
+          guessSpace += letter;
         } else {
           update += guess[i];
+          guessSpace += letter;
           console.log(guess[i]);
         }
-        update += " ";
+        guessSpace += " ";
       }
       guess = update;
       console.log(guess);
-      wordToGuess.innerHTML = guess;
+      wordToGuess.innerHTML = guessSpace;
       if (right == answer.length) {
         alert("YOU WIN");
       }

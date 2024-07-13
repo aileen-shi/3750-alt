@@ -18,10 +18,13 @@ if (!isset($_COOKIE['first'])) {
 // Check form
 // Check these numbers
 if (isset($_POST['check'])) {
+    echo "<p>" . Entered val in text area ."</p>"
+    /*
     $nums = explode(' ', $_POST['check']);
 
     foreach($nums as $num) {
         echo "<p>" . $num ."</p>"
     }
+        */
 }
 ?>

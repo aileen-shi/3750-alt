@@ -31,8 +31,11 @@
     <p><?php echo $_POST['ref'] ?></p>
     <h2>Referral Link</h2>
     <p><?php 
-    if (!$_POST['link']) {
-        echo $_POST['link']
+    if (!empty($_POST['link'])) {
+        $url = filter_var($_POST['link'], FILTER_SANITIZE_URL);
+            
+        // Display the submitted URL
+        echo "<p>Submitted URL: <a href=\"$url\" target=\"_blank\">$url</a></p>";
     }
     else {
         echo "None"

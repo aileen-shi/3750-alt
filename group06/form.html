@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Pet Registration Form</h1>
+    <form name="registration" method="post" action="form.php"></form>
+    <fieldset>
+      <legend>Pet Info</legend>
+      <p>
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          size="20"
+          id="name"
+          name="name"
+          placeholder="Enter your pet's name"
+          required
+          autofocus
+        />
+      </p>
+      <p>
+        <label for="description">Description</label>
+        <br />
+        <textarea
+          id="description"
+          name="description"
+          rows="7"
+          cols="50"
+          placeholder="Example: Gizmo is an orange cat"
+        ></textarea>
+      </p>
+      <p>
+        <label for="passoword">Password:</label>
+        <input type="password" id="password" class="password" size="20" />
+      </p>
+      <p>
+        <span class="question">What kind of pet do you have?</span><br />
+        <input type="radio" id="cat" name="species" value="cat" />
+        <label for="cat">Cat</label>
+        <br />
+        <input type="radio" id="dog" name="species" value="dog" />
+        <label for="dog">Dog</label>
+        <br />
+        <input type="radio" id="rabbit" name="species" value="rabbit" />
+        <label for="rabbit">Rabbit</label>
+        <br />
+        <input type="radio" id="hamster" name="species" value="hamster" />
+        <label for="hamster">Hamster</label>
+      </p>
+      <p>
+        <span class="question">Select all health conditions</span><br />
+        <input type="checkbox" id="fleas" name="health[]" value="Fleas" />
+        <label for="fleas">Fleas</label>
+        <br />
+        <input type="checkbox" id="dental" name="health[]" value="Dental" />
+        <label for="obesity">Dental</label>
+        <br />
+        <input type="checkbox" id="obesity" name="health[]" value="Obesity" />
+        <label for="obesity">Obesity</label>
+        <br />
+        <input type="checkbox" id="cancer" name="health[]" value="Cancer" />
+        <label for="cancer">Cancer</label>
+        <br />
+        <input
+          type="checkbox"
+          id="digestive"
+          name="health[]"
+          value="Digestive"
+        />
+        <label for="digestive">Digestive</label>
+        <br />
+        <input type="checkbox" id="heart" name="health[]" value="Heart" />
+        <label for="heart">Heart</label>
+      </p>
+      <p>
+        <label for="ref"
+          ><span class="question">How did you hear about us?</span></label
+        ><br />
+        <select id="ref" name="ref">
+          <option value="1">Google</option>
+          <option value="2">Facebook</option>
+          <option value="3">Instagram</option>
+          <option value="4">TikTok</option>
+          <option value="5">Word of Mouth</option>
+        </select>
+      </p>
+      <p>
+        <label for="upload">Upload image of your pet</label>
+        <input
+          type="file"
+          id="upload"
+          name="upload"
+          accept="image/png, image/jpeg"
+        />
+      </p>
+      <p>
+        <label for="link">Enter referral link (optional)</label>
+        <input type="url" name="link" id="link" />
+      </p>
+      <p>
+        <input type="hidden" name="mailto" value="ashi@clemson.edu" />
+      </p>
+    </fieldset>
+    <p>
+      <button type="submit" name="submit" value="submit">Submit</button>
+    </p>
+    <script src="../navbar.js"></script>
+  </body>
+</html>

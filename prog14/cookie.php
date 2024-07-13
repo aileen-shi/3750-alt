@@ -17,7 +17,7 @@ if (!isset($_COOKIE['first'])) {
 
 echo "<p>Entered" . $_POST['numbers'] . "</p>";
 
-
+/*
 // Check form
 // Check these numbers
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -33,5 +33,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             
     }
 }
-
+*/
 ?>

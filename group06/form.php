@@ -51,11 +51,11 @@
         echo "<p>Path: $filePath</p>";
 
         // Check if file exists and display it
-        if (file_exists($fileTmpPath)) {
+        if (file_exists($filePath)) {
             echo "<h2>Uploaded File Content:</h2>";
-            echo "<img src='$fileTmpPath' alt='Uploaded File'>";
+            echo "<img src='$filePath' alt='Uploaded File'>";
         } else {
-            echo "File not found: $fileTmpPath";
+            echo "File not found: $filePath";
         }
     }
     ?>

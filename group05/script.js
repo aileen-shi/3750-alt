@@ -65,6 +65,7 @@ function guessLetter(letter) {
 
   // Check if new guess
   if (!attempted.includes(letter)) {
+    console.log("guess = ", guess);
     // Add to attempted list
     attempted.push(letter);
 

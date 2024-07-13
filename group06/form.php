@@ -48,6 +48,7 @@
             echo "No file uploaded or an error occurred.";
         }
     }
+    ?>
     <script src="../navbar.js"></script>
 </body>
 </html>

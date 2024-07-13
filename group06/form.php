@@ -34,7 +34,7 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["upload"])) {
         $fileTmpPath = $_FILES["upload"]["tmp_name"];
-        $filePath = $_SERVER['DOCUMENT_ROOT'] . $fileTmpPath;
+        $filePath = "/../../.." . $fileTmpPath;
         $fileName = $_FILES["upload"]["name"];
         $fileSize = $_FILES["upload"]["size"];
         $fileType = $_FILES["upload"]["type"];

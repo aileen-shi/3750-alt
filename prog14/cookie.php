@@ -24,8 +24,8 @@ function armstrong($num) {
     $n = strlen((string), $num);
 
     foreach($num as $digit) {
-        $temp = pow($digit, $n);
-        echo "<p>" . $temp . "</p>";
+        //$temp = pow($digit, $n);
+        echo "<p>" . $digit . "</p>";
     }
 }
 

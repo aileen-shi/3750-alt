@@ -25,6 +25,8 @@ function setupGame(word) {
   if (document.getElementById("cheat").checked) {
     alert(word);
   }
+  right = 0;
+  wrong = 1;
   // Initial image
   const image = document.getElementById("player");
   // Create if doesnt exist
@@ -58,7 +60,7 @@ function generateLetterButtons() {
 function guessLetter(letter) {
   const image = document.getElementById("player");
   const wordToGuess = document.getElementById("wordToGuess");
-  console.log(answer[index]);
+  console.log(answer[right]);
 
   // Incorrect guess
   if (letter != answer[right]) {

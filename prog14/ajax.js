@@ -35,6 +35,7 @@ function checkNum() {
 function showList(listType) {
   // Update list color
   color = document.getElementById(listType).style.backgroundColor;
+  console.log(color);
   var request = new XMLHttpRequest();
   // Callback
   request.onload = function () {

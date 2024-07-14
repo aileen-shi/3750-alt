@@ -1,4 +1,10 @@
 <?php
+/*
+Aileen Shi
+  CPSC 3750
+  7/12/24
+  Hangman
+*/
 
 // words.txt stored outside of root to prevent user from loading
 $filePath = '../../data/words.txt';

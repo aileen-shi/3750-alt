@@ -1,9 +1,11 @@
 <?php
-// Set cookie
-setcookie("vegetable", "artichoke", time()+3600, "/", ".aileenshi.com", 0);
-if (isset($_COOKIE['vegetable'])) {
-	echo "<p>Hello again! You have chosen: ".$_COOKIE['vegetable'].".</p>";
-} else {
-	echo "<p>Hello, you. This may be your first visit.</p>";
-}
+$myfile = fopen("testing.txt", "w") or die("unable to open");
+fwrite($myfile, "hello world");
+fclose($myfile);
+
+$myfile = fopen("testing.txt", "r") or die("unable to open");
+$temp = fread($myfile,filesize("testing.txt"));
+fclose($myfile);
+
+echo "read $temp";
 ?>

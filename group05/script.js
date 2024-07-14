@@ -1,3 +1,9 @@
+/*
+  Aileen Shi
+  CPSC 3750
+  7/12/24
+  Hangman
+*/
 // Current word
 let answer = "";
 let guess = "";
@@ -5,6 +11,7 @@ let wrong = 1;
 let right = 0;
 let attempted = [];
 
+// Start game
 function startGame() {
   // Fetch a new word from the server
   fetch("getWord.php")
@@ -50,6 +57,7 @@ function setupGame(word) {
   generateLetterButtons();
 }
 
+// Generate letters
 function generateLetterButtons() {
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const lettersDiv = document.getElementById("letters");
@@ -63,6 +71,7 @@ function generateLetterButtons() {
   });
 }
 
+// Guess letter
 function guessLetter(letter) {
   const image = document.getElementById("player");
   const wordToGuess = document.getElementById("wordToGuess");

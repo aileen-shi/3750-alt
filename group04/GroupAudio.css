@@ -5,19 +5,21 @@
     Group Audio
 */
 
-*, *::before, *::after {
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 * {
-    margin: 0;
+  margin: 0;
 }
 
 body {
-    line-height: 1.5;
-    font-family: 'Judson', serif;
-    font-size: calc(13px + 1vw);
-    background-color: #598392;
+  line-height: 1.5;
+  font-family: "Judson", serif;
+  font-size: calc(13px + 1vw);
+  background-color: #598392;
 }
 
 input,
@@ -28,32 +30,36 @@ select {
 }
 
 img {
-    display: block;
-    max-width: 400px;
-    margin: 1rem auto;
-    width: 30%;
-    border-radius: 5px;
+  display: block;
+  max-width: 400px;
+  margin: 1rem auto;
+  width: 30%;
+  border-radius: 5px;
 }
 
 audio {
-    display: block;
-    margin: 1rem auto;
-    max-width: 500px;
-    width: 60%;
+  display: block;
+  margin: 1rem auto;
+  max-width: 500px;
+  width: 60%;
 }
 
-h1, h3, h4, h5, h6 {
-    font-family: 'Archivo Black', sans-serif;
-    margin: 1rem;
-    color: #EFF6E0;
-    letter-spacing: .25rem;
+h1,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Archivo Black", sans-serif;
+  margin: 1rem;
+  color: #eff6e0;
+  letter-spacing: 0.25rem;
 }
 
 figcaption {
-    text-align: center;
-    color: #124559;
+  text-align: center;
+  color: #124559;
 }
 
 audio {
-    margin-bottom: 10rem;
+  margin-bottom: 10rem;
 }

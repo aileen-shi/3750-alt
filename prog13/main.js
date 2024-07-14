@@ -1,7 +1,13 @@
+/*
+  Aileen Shi
+  CPSC 3750
+  7/12/24
+  Handlebars
+*/
 var pageCounter = 1;
 var animalContainer = document.getElementById("animal-info");
 var btn = document.getElementById("btn");
-
+// Button click
 btn.addEventListener("click", function () {
   var ourRequest = new XMLHttpRequest();
   ourRequest.open(
@@ -21,6 +27,7 @@ btn.addEventListener("click", function () {
   }
 });
 
+// Render
 function renderHTML(petsData) {
   var rawTemplate = document.getElementById("petsTemplate").innerHTML;
 

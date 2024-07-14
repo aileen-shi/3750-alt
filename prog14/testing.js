@@ -32,7 +32,7 @@ function checkNum() {
 }
 
 // Get list
-function getList(listType) {
+function showList(listType) {
   var request = new XMLHttpRequest();
   // Callback
   request.onload = function () {

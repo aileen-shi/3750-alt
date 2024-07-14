@@ -8,9 +8,25 @@ document.addEventListener("DOMContentLoaded", (event) => {
         console.log("error", request.statusText);
       }
     };
-    request.open("GET", "test.php", true);
+    request.open("GET", "setcookie.php", true);
     request.send();
   }
-  console.log("end of js");
   initializeCookie();
 });
+
+// Send numbers
+function checkNum() {
+  numbers = document.getElementById("numbers").value;
+
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      console.log("checknum: ", request.responseText);
+    } else {
+      console.log("error", request.statusText);
+    }
+  };
+  request.open("POST", "checknum.php", true);
+  request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  request.send("text=" + encodeURIComponent(numbers));
+}

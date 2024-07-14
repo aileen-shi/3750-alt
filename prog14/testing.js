@@ -10,4 +10,5 @@ document.addEventListener("DOMContentLoaded", (event) => {
     request.open("GET", "test.php", true);
     request.send();
   }
+  initializeCookie();
 });

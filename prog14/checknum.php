@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $none = False;
             }
             // Check prime
-            if (prime($num)) {
+            if (prime($num, 2)) {
                 // Write
                 $prime = fopen("prime.txt", "a");
                 fwrite($prime, $num . "\n");
@@ -36,6 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 echo "wrote to prime\n";
                 $none = False;
             }
+            /*
             // None
             if ($none) {
                 // Write
@@ -44,6 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 fclose($none);
                 echo "wrote to none\n";
             }
+                */
         }
     }
 }

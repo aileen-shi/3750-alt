@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo file_get_contents("none.txt");
         }
         else {
-            echo "Empty"
+            echo "Empty";
         }
     }
     else {

@@ -11,5 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo "Empty"
         }
     }
+    else {
+        echo "type parameter not set";
+    }
 }
 ?>

@@ -36,8 +36,12 @@ function showList(listType) {
   var request = new XMLHttpRequest();
   // Callback
   request.onload = function () {
-    var numStr = this.responseText;
-    console.log(numStr);
+    if (request.status >= 200 && request.status < 400) {
+      var numStr = this.responseText;
+      console.log(numStr);
+    } else {
+      console.error("failed with status:", request.status);
+    }
   };
   request.open("POST", "show.php", true);
   request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");

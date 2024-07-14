@@ -1,6 +1,6 @@
 <?php
 $myfile = fopen("testing.txt", "w") or die("unable to open");
-fwrite($myfile, "hello world");
+fwrite($myfile, "meow");
 fclose($myfile);
 
 $myfile = fopen("testing.txt", "r") or die("unable to open");

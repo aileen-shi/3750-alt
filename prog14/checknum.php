@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Check each number
         foreach($nums as $num) {
-            echo "current num $num \n"; 
+            echo $num . "\n"; 
             $none = True;
             // Check if armstrong
             if (armstrong($num)) {
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // None
             if ($none) {
                 // Write
-                $nonee = fopen("none.txt", "a");
+                $none = fopen("none.txt", "a");
                 fwrite($none, $num . "\n");
                 fclose($none);
                 echo "wrote to none\n";

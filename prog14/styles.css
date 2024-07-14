@@ -1,0 +1,54 @@
+/* Spacing */
+content-container {
+  padding-left: 100px;
+}
+
+textarea {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#check {
+  display: block;
+  padding: 10px;
+  margin: 20px auto;
+}
+
+button {
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  gap: 10px;
+}
+/* Button colors*/
+#armstrong {
+  background-color: #d6767f;
+}
+
+#prime {
+  background-color: #deca81;
+}
+
+#fib {
+  background-color: #8ae39f;
+}
+
+#none {
+  background-color: #918ad4;
+}
+
+/* Results list*/
+#results {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

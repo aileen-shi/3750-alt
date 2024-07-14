@@ -4,42 +4,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>File I/O</title>
-    <!--Send data with button click to php without going to php-->
-    <script type="text/javascript" src="testing.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="text/javascript" src="ajax.js"></script>
   </head>
   <body>
     <h1>File I/O</h1>
-
-    <!--Form-->
-    <form id="numForm" onsubmit="event.preventDefault(); checkNum();">
-      <p>
-        <label for="numbers"> </label>
-        <textarea
-          name="numbers"
-          id="numbers"
-          rows="4"
-          cols="50"
-          placeholder="Enter numbers separated by a space"
-          autofocus
-        >
-        </textarea>
-      </p>
-      <input
-        type="submit"
-        name="check"
-        id="check"
-        value="CHECK THESE NUMBERS"
-      />
-    </form>
-    <!--Buttons-->
-    <button onclick="showList('armstrong');">ARMSTRONG</button>
-    <button onclick="showList('prime');">PRIME</button>
-    <button onclick="showList('fibonacci');">FIBONACCI</button>
-    <button onclick="showList('none');">NONE</button>
-    <button onclick="reset();">RESET</button>
-
+    <div id="content-container">
+      <!--Form-->
+      <form id="numForm" onsubmit="event.preventDefault(); checkNum();">
+        <p>
+          <label for="numbers"> </label>
+          <textarea
+            name="numbers"
+            id="numbers"
+            rows="4"
+            cols="50"
+            placeholder="Enter numbers separated by a space"
+            autofocus
+          >
+          </textarea>
+        </p>
+        <input
+          type="submit"
+          name="check"
+          id="check"
+          value="CHECK THESE NUMBERS"
+        />
+      </form>
+      <!--Buttons-->
+      <div class="btn-container">
+        <button id="armstrong" onclick="showList('armstrong');">
+          ARMSTRONG
+        </button>
+        <button id="prime" onclick="showList('prime');">PRIME</button>
+        <button id="fib" onclick="showList('fibonacci');">FIBONACCI</button>
+        <button id="none" onclick="showList('none');">NONE</button>
+        <button onclick="reset();">RESET</button>
+      </div>
+    </div>
     <div id="results"></div>
-    <div id="testing"></div>
     <script src="../navbar.js"></script>
   </body>
 </html>

@@ -34,8 +34,7 @@ function checkNum() {
 // Get list
 function showList(listType) {
   // Update list color
-  document.getElementById("results").style.backgroundColor =
-    document.getElementById(listType).style.backgroundColor;
+  color = document.getElementById(listType).style.backgroundColor;
   var request = new XMLHttpRequest();
   // Callback
   request.onload = function () {
@@ -43,6 +42,7 @@ function showList(listType) {
       var numStr = this.responseText;
       document.getElementById("results").innerHTML = this.responseText;
       console.log(numStr);
+      document.getElementById("results").style.color = color;
     } else {
       console.error("failed with status:", request.status);
     }

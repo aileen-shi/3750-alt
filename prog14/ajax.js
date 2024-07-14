@@ -1,5 +1,14 @@
+/*
+    Aileen Shi
+    CPSC 3750
+    7/13/24
+    File I/O
+*/
+
+// Check cookies on file load
 document.addEventListener("DOMContentLoaded", (event) => {
   function initializeCookie() {
+    // New request
     var request = new XMLHttpRequest();
     request.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
@@ -8,16 +17,20 @@ document.addEventListener("DOMContentLoaded", (event) => {
         console.log("error", request.statusText);
       }
     };
+    // Send
     request.open("GET", "setcookie.php", true);
     request.send();
   }
+  // Call function
   initializeCookie();
 });
 
 // Send numbers
 function checkNum() {
+  // Get numbers to send
   numbers = document.getElementById("numbers").value;
 
+  // New request
   var request = new XMLHttpRequest();
   request.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
@@ -26,6 +39,7 @@ function checkNum() {
       console.log("error", request.statusText);
     }
   };
+  // Send
   request.open("POST", "checknum.php", true);
   request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   request.send("text=" + encodeURIComponent(numbers));
@@ -37,6 +51,7 @@ function showList(listType) {
   // Callback
   request.onload = function () {
     if (request.status >= 200 && request.status < 400) {
+      // Show in results div
       var numStr = this.responseText;
       document.getElementById("results").innerHTML = this.responseText;
       console.log(numStr);
@@ -51,6 +66,7 @@ function showList(listType) {
 
 // Erase
 function reset() {
+  // New request
   var request = new XMLHttpRequest();
   request.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
@@ -59,6 +75,7 @@ function reset() {
       console.log("error");
     }
   };
+  // Send
   request.open("POST", "reset.php", true);
   request.send();
 }

@@ -1,7 +1,15 @@
 <?php 
+/*
+    Aileen Shi
+    CPSC 3750
+    7/13/24
+    File I/O
+*/
+// Check for POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $data = $_POST['text'];
     if (isset($_POST['text'])) {
+        // Extract numbers
         $data = $_POST['text'];
         $nums = explode(" ", $data);
 

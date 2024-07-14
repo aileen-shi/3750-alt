@@ -36,7 +36,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 echo "wrote to prime\n";
                 $none = False;
             }
-            /*
             // None
             if ($none === True) {
                 // Write
@@ -45,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 fclose($none);
                 echo "wrote to none\n";
             }
-                */
+                
         }
     }
 }

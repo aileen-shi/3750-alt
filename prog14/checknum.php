@@ -7,6 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Check each number
         foreach($nums as $num) {
+            echo "current num $num \n"; 
             $none = True;
             // Check if armstrong
             if (armstrong($num)) {
@@ -14,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $armstrong = fopen("armstrong.txt", "a");
                 fwrite($armstrong, $num . "\n");
                 fclose($armstrong);
-                echo "wrote to armstrong";
+                echo "wrote to armstrong\n";
                 $none = False;
             }
             // Check fibonacci
@@ -23,8 +24,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $fibonacci = fopen("fibonacci.txt", "a");
                 fwrite($fibonacci, $num . "\n");
                 fclose($fibonacci);
-                echo "wrote to fib";
+                echo "wrote to fib\n";
                 $none = False;
+            }
+            // Check prime
+            if (prime($num)) {
+                // Write
+                $prime = fopen("prime.txt", "a");
+                fwrite($prime, $num . "\n");
+                fclose($prime);
+                echo "wrote to prime\n";
+                $none = False;
+            }
+            // None
+            if ($none) {
+                // Write
+                $nonee = fopen("none.txt", "a");
+                fwrite($none, $num . "\n");
+                fclose($none);
+                echo "wrote to none\n";
             }
         }
     }
@@ -57,4 +75,22 @@ function fibonacci($num) {
     }
     return $a == $num;
 }
+
+// Check prime
+function prime($num, $i) {
+    if ($num == 0 || $num == 1) {
+        return False;
+    }
+
+    if ($num == $i) {
+        return True;
+    }
+
+    if ($num % $i == 0) {
+        return False;
+    }
+    $i++;
+    prime($num, $i);
+}
+
 ?>

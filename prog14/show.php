@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $file = $type . ".txt";
 
         if (file_exists($file)) {
-            echo file_get_contents("none.txt");
+            echo file_get_contents($file);
         }
         else {
             echo "Empty";

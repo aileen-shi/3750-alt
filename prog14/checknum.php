@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 fclose($fibonacci);
                 echo "wrote to fib\n";
                 $none = False;
-            }
+            }/*
             // Check prime
             if (prime($num, 2)) {
                 // Write
@@ -36,6 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 echo "wrote to prime\n";
                 $none = False;
             }
+            */
             /*
             // None
             if ($none) {

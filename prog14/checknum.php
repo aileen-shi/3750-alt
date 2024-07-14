@@ -36,15 +36,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 echo "wrote to prime\n";
                 $none = False;
             }
-            
+            /*
             // None
-            if ($none) {
+            if ($none === True) {
                 // Write
                 $none = fopen("none.txt", "a");
                 fwrite($none, $num . "\n");
                 fclose($none);
                 echo "wrote to none\n";
             }
+                */
         }
     }
 }

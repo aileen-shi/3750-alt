@@ -38,6 +38,7 @@ function showList(listType) {
   request.onload = function () {
     if (request.status >= 200 && request.status < 400) {
       var numStr = this.responseText;
+      document.getElementById("results").innerHTML = this.responseText;
       console.log(numStr);
     } else {
       console.error("failed with status:", request.status);

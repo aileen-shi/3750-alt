@@ -4,6 +4,7 @@
     CPSC 3750
     Prog14 PHP I/O
 */
+
 // Post numbers to php
 function checkNum() {
   nums = document.getElementById("numbers").value;

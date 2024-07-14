@@ -43,8 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 fwrite($none, $num . "\n");
                 fclose($none);
                 echo "wrote to none\n";
-            }
-                
+            }              
         }
     }
 }

@@ -30,3 +30,15 @@ function checkNum() {
   request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   request.send("text=" + encodeURIComponent(numbers));
 }
+
+// Get list
+function getList(listType) {
+  var request = new XMLHttpRequest();
+  // Callback
+  request.onload = function () {
+    document.getElementById("results").innerHTML = this.responseText;
+  };
+  request.open("POST", "php.show", true);
+  request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  request.send("type=" + encodeURIComponent(listType));
+}

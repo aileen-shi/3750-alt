@@ -4,7 +4,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     request.onreadystatechange ==
       function () {
         if (this.readyState == 4 && this.status == 200) {
-          console.log("requested php");
+          console.log("requested php", request.responseText);
+        } else {
+          console.log("error", request.statusText);
         }
       };
     request.open("GET", "test.php", true);

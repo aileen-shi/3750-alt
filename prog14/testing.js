@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     var request = new XMLHttpRequest();
     request.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
-        console.log("requested php", request.responseText);
+        console.log("initialize cookie ", request.responseText);
       } else {
         console.log("error", request.statusText);
       }
@@ -47,4 +47,18 @@ function showList(listType) {
   request.open("POST", "show.php", true);
   request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   request.send("type=" + encodeURIComponent(listType));
+}
+
+// Erase
+function reset() {
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      console.log("reset ", request.responseText);
+    } else {
+      console.log("error", request.statusText);
+    }
+  };
+  request.open("POST", "reset.php", true);
+  request.send();
 }

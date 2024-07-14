@@ -33,9 +33,6 @@ function checkNum() {
 
 // Get list
 function showList(listType) {
-  // Update list color
-  color = document.getElementById(listType).style.backgroundColor;
-  console.log(color);
   var request = new XMLHttpRequest();
   // Callback
   request.onload = function () {
@@ -43,7 +40,6 @@ function showList(listType) {
       var numStr = this.responseText;
       document.getElementById("results").innerHTML = this.responseText;
       console.log(numStr);
-      document.getElementById("results").style.color = color;
     } else {
       console.error("failed with status:", request.status);
     }
@@ -60,7 +56,7 @@ function reset() {
     if (this.readyState == 4 && this.status == 200) {
       console.log("reset ", request.responseText);
     } else {
-      console.log("error", request.statusText);
+      console.log("error");
     }
   };
   request.open("POST", "reset.php", true);

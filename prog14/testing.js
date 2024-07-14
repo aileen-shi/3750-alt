@@ -36,7 +36,8 @@ function showList(listType) {
   var request = new XMLHttpRequest();
   // Callback
   request.onload = function () {
-    document.getElementById("results").innerHTML = this.responseText;
+    var numStr = this.responseText;
+    console.log(numStr);
   };
   request.open("POST", "show.php", true);
   request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");

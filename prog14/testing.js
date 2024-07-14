@@ -38,7 +38,7 @@ function showList(listType) {
   request.onload = function () {
     document.getElementById("results").innerHTML = this.responseText;
   };
-  request.open("POST", "php.show", true);
+  request.open("POST", "show.php", true);
   request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   request.send("type=" + encodeURIComponent(listType));
 }

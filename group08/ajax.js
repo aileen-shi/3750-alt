@@ -9,7 +9,7 @@ console.log("loaded");
 
 document.addEventListener("DOMContentLoaded", function () {
   document
-    .getElementById("submit")
+    .getElementById("zipForm")
     .addEventListener("submit", function (event) {
       event.preventDefault();
 
@@ -19,17 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
       zip2 = document.getElementById("zip2").value;
 
       var request = new XMLHttpRequest();
-      /*
-        // Callback
-        request.onload = function () {
-            if (request.status >= 200 && request.status < 400) {
-            console.log("success");
-            console.log(request.responseText);
-            } else {
-            console.error("failed with status:", request.status);
-            }
-        };
-        */
+
       // Send
       request.open("POST", "zipcode.php", true);
       request.setRequestHeader(
@@ -38,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
       );
 
       request.onreadystatechange = function () {
-        if (request.status === 4 && request.status === 200) {
+        if (request.readyState === 4 && request.status === 200) {
           document.getElementById("result").innerText = request.responseText;
         }
       };

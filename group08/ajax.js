@@ -5,14 +5,18 @@
     Zip Code
 */
 
-// Send zip codes to server
-function calcDistance() {
+console.log("loaded");
+
+document.getElementById("zipForm").addEventListener("submit", function (event) {
+  event.preventDefault();
+
   console.log("HERE");
   // Get zipcodes to send
   zip1 = document.getElementById("zip1").value;
   zip2 = document.getElementById("zip2").value;
 
   var request = new XMLHttpRequest();
+  /*
   // Callback
   request.onload = function () {
     if (request.status >= 200 && request.status < 400) {
@@ -22,10 +26,18 @@ function calcDistance() {
       console.error("failed with status:", request.status);
     }
   };
+  */
   // Send
   request.open("POST", "zipcode.php", true);
   request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+  request.onreadystatechange = function () {
+    if (request.status === 4 && request.status === 200) {
+      document.getElementById("result").innerText = request.responseText;
+    }
+  };
+
   var params =
     "zip1=" + encodeURIComponent(zip1) + "&zip2=" + encodeURIComponent(zip2);
   request.send(params);
-}
+});

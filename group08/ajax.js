@@ -15,6 +15,7 @@ function calcDistance() {
   // Callback
   request.onload = function () {
     if (request.status >= 200 && request.status < 400) {
+      console.log("success");
       console.log(request.responseText);
     } else {
       console.error("failed with status:", request.status);

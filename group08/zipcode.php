@@ -8,8 +8,8 @@
 */
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $zip1 = isset($_POST['zip1']);
-    $zip2 = isset($_POST['zip2']);
+    $zip1 = isset($_POST['zip1']) ? $_POST['zip1'] : '';
+    $zip2 = isset($_POST['zip2']) ? $_POST['zip2'] : '';
 
     // Testing
     $result = "Zip1: " . $zip1 . " Zip2: " . $zip2;

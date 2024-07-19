@@ -9,7 +9,7 @@ console.log("loaded");
 
 document.addEventListener("DOMContentLoaded", function () {
   document
-    .getElementById("zipForm")
+    .getElementById("submit")
     .addEventListener("submit", function (event) {
       event.preventDefault();
 

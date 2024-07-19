@@ -1,0 +1,79 @@
+/*
+    Aileen Shi
+    CPSC 3750 
+    7/19/24
+    Zip Code
+*/
+
+/* Trying out normalizing css */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  font-size: calc(10px + 1vw);
+  line-height: calc(1.1em + 0.5vw);
+}
+
+img {
+  display: block;
+  max-width: 50%;
+  margin: 2rem auto;
+}
+
+input,
+button {
+  font: inherit;
+}
+
+/* Content container*/
+
+.content-container {
+  width: 50%;
+  margin: auto;
+}
+
+h1 {
+  padding: 2rem 1rem;
+}
+
+/* Form stuff*/
+
+.zipForm {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
+}
+
+label,
+input {
+  display: inline-block;
+}
+
+input {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#submit {
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: auto;
+}
+
+/* Results*/
+
+.result-container {
+  padding: 1rem;
+  text-align: center;
+}

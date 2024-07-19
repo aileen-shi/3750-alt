@@ -5,28 +5,28 @@
     Zip Code
 */
 
-console.log("loaded");
-
+// Loaded
 document.addEventListener("DOMContentLoaded", function () {
+  // Add event listener to submit
   document
     .getElementById("zipForm")
     .addEventListener("submit", function (event) {
       event.preventDefault();
 
-      console.log("HERE");
       // Get zipcodes to send
       zip1 = document.getElementById("zip1").value;
       zip2 = document.getElementById("zip2").value;
 
+      // New request
       var request = new XMLHttpRequest();
 
-      // Send
       request.open("POST", "zipcode.php", true);
       request.setRequestHeader(
         "Content-Type",
         "application/x-www-form-urlencoded"
       );
 
+      // Update result
       request.onreadystatechange = function () {
         if (request.readyState === 4 && request.status === 200) {
           document.getElementById("result").innerText = request.responseText;

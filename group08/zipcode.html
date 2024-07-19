@@ -8,21 +8,34 @@
   </head>
   <body>
     <h1>USA Zipcode Distance Calculator</h1>
-    <div class="content-container"></div>
-    <img class="map" src="map.png">
-        <form id="zipForm">
-            <fieldset>
-            <!-- Form -->
-                <label for="zip1">Enter first zipcode:</label>
-                <input type="text" id="zip1" pattern="[0-9]{5}" placeholder="29631" required />
-                <label for="zip2">Enter second zipcode:</label>
-                <input type="text" id="zip2" pattern="[0-9]{5}" placeholder="29414" required />
-                <input type="submit" id="submit" name="submit" value="Calculate" />
-            </fieldset>
-        </form>
-        <div class="result-container">
-            <h2>Distance (miles): <span id="result">123</span></h2>
-        </div>
+    <div class="content-container">
+      <img class="map" src="map.png" />
+      <form id="zipForm">
+        <fieldset>
+          <!-- Form -->
+          <label for="zip1">Enter first zipcode:</label>
+          <input
+            type="text"
+            id="zip1"
+            pattern="[0-9]{5}"
+            placeholder="29631"
+            required
+          />
+          <label for="zip2">Enter second zipcode:</label>
+          <input
+            type="text"
+            id="zip2"
+            pattern="[0-9]{5}"
+            placeholder="29414"
+            required
+          />
+          <input type="submit" id="submit" name="submit" value="Calculate" />
+        </fieldset>
+      </form>
+      <!-- Result -->
+      <div class="result-container">
+        <h3>Distance (miles): <span id="result"></span></h3>
+      </div>
     </div>
     <script type="text/javascript" src="ajax.js"></script>
     <script src="../navbar.js"></script>

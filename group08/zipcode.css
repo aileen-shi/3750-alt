@@ -53,12 +53,12 @@ h1 {
   text-align: center;
 }
 
-label,
-input {
-  display: inline-block;
+label {
+  display: block;
 }
 
 input {
+  display: inline;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }

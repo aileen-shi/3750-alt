@@ -38,7 +38,7 @@ function calcDistance($coord1, $coord2) {
     $dlat = $lat2 - $lat1;
 
     $a = pow(sin($dlat/2), 2) + cos($lat1) * cos($lat2) * 
-    pow(sin($dlong/2),2);s
+    pow(sin($dlong/2),2);
 
     $c = 2 * atan2(sqrt($a), sqrt(1-$a));
 

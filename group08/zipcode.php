@@ -53,8 +53,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $coord1 = getCoord($zip1);
     $coord2 = getCoord($zip2);
 
-    echo $coord1['lat'];
+    echo "Lat1: " . $coord1['lat'] . " Long1: " . $coord1['long'];
+    echo "Lat2: " . $coord2['lat'] . " Long2: " . $coord2['long'];
 
+    /*
     // Calculate distance
     if ($coord1 && $coord2) {
         $distance = calcDistance($coord1, $coord2);
@@ -63,6 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     else {
         echo "Invalid zip entry";
     }
+        */
 }
 
 ?>

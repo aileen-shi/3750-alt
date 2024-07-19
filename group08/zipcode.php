@@ -37,11 +37,14 @@ function calcDistance($coord1, $coord2) {
     $dlong = $long2 - $long1;
     $dlat = $lat2 - $lat1;
 
-    $value = pow(sin($dlat/2), 2) + cos($lat1) * cos($lat2) * pow(sin($dlong/2), 2);
+    $a = pow(sin($dlat/2), 2) + cos($lat1) * $cos($lat2) * 
+    pow(sin($dlong/2),2);s
 
-    $result = 2 * asin(sqrt($value));
+    $c = 2 * atan2(sqrt($a), sqrt(1-$a));
 
-    $distance = $radius * $result;
+    $distance = $radius * $c;
+
+    return $distance;
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -52,11 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Get coordinates
     $coord1 = getCoord($zip1);
     $coord2 = getCoord($zip2);
-
-    echo "Lat1: " . $coord1['lat'] . " Long1: " . $coord1['long'];
-    echo "Lat2: " . $coord2['lat'] . " Long2: " . $coord2['long'];
-
-    /*
+ 
     // Calculate distance
     if ($coord1 && $coord2) {
         $distance = calcDistance($coord1, $coord2);
@@ -65,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     else {
         echo "Invalid zip entry";
     }
-        */
+        
 }
 
 ?>

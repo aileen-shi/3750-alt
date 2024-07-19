@@ -7,6 +7,7 @@
 
 // Send zip codes to server
 function calcDistance() {
+  console.log("HERE");
   // Get zipcodes to send
   zip1 = document.getElementById("zip1").value;
   zip2 = document.getElementById("zip2").value;

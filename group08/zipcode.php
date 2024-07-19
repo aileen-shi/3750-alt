@@ -53,6 +53,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $coord1 = getCoord($zip1);
     $coord2 = getCoord($zip2);
 
+    echo $coord1['lat'];
+
     // Calculate distance
     if ($coord1 && $coord2) {
         $distance = calcDistance($coord1, $coord2);

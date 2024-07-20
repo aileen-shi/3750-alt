@@ -120,6 +120,8 @@ function organizeWords(data) {
       case 6:
         list6.appendChild(newWord);
         break;
+      default:
+        console.log(newWord);
     }
   }
 }

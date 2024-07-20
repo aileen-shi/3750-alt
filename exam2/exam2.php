@@ -1,5 +1,12 @@
 <?php 
 
+/*
+    Aileen Shi
+    CPSC 3750
+    7/20/24
+    Exam 2
+*/
+
 // Function to check if vowel
 function isVowel($letter) {
     if (

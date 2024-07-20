@@ -8,6 +8,7 @@
 var dragSrcEl = null;
 var count = 0;
 
+// Drag start event listener
 function dragStart(e) {
   dragSrcEl = this;
 
@@ -17,6 +18,7 @@ function dragStart(e) {
   this.classList.add("dragElem");
 }
 
+// Drag over event listener
 function dragOver(e) {
   if (e.preventDefault) {
     e.preventDefault();
@@ -25,11 +27,14 @@ function dragOver(e) {
   return false;
 }
 
+// Drop event listener
 function drop(e) {
   if (e.stopPropagation) {
     e.stopPropagation();
   }
+  // Target is word bank
   if (dragSrcEl != this && this.id == "word-bank") {
+    // Remove from word list and put into word bank
     dragSrcEl.parentNode.removeChild(dragSrcEl);
     document.getElementById("word-bank-list").appendChild(dragSrcEl);
     dragSrcEl.classList.remove("dragElem");
@@ -45,26 +50,20 @@ function addDnDHandlers(elem) {
   elem.addEventListener("dragover", dragOver, false);
 }
 
+// Add event handlers for dragging in wordbank
 const wordBank = document.getElementById("word-bank");
 wordBank.addEventListener("drop", drop, false);
 wordBank.addEventListener("dragover", dragOver, false);
 
-// REMOVE
-var words = document.querySelectorAll(".word");
-[].forEach.call(words, addDnDHandlers);
-
 // Update count for word bank
 function countUpdate() {
   count++;
-  console.log(count);
   document.getElementById("word-count").innerText = count;
 }
 
 // Show list on button click
 function showList(e) {
   const list = e.currentTarget.nextElementSibling;
-  // TESTING
-  console.log(this.innerText);
   list.classList.remove("hidden");
   list.classList.add("visible");
   //
@@ -124,13 +123,9 @@ function organizeWords(data) {
       case 6:
         list6.appendChild(newWord);
         break;
-      default:
-        console.log(value, key);
     }
   }
 }
-
-// Add list as element
 
 // Loaded
 document.addEventListener("DOMContentLoaded", function () {

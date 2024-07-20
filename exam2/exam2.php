@@ -21,7 +21,6 @@ function keyLength($a, $b) {
     return strlen($a) - strlen($b);
 }
 
-
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     // Open file
     $file = fopen('temp.txt', 'r');

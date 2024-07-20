@@ -1,0 +1,41 @@
+header {
+  margin: 2rem 1rem;
+}
+
+.content-container {
+  margin: 2rem;
+}
+
+.word-bank-container h2,
+.word-bank-container h3 {
+  text-align: center;
+}
+
+#word-bank {
+  display: block;
+  margin: 1rem auto;
+  width: 50%;
+  height: 20rem;
+  background-color: lightgray;
+}
+
+.buttons {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.word-list {
+  background-color: lightgray;
+  height: 200px;
+}
+
+.scrollable {
+  overflow: hidden;
+  overflow-y: scroll;
+}

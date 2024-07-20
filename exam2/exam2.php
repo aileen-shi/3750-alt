@@ -7,7 +7,12 @@ function isVowel($letter) {
         $letter == "e" ||
         $letter == "i" ||
         $letter == "o" ||
-        $letter == "u" 
+        $letter == "u" ||
+        $letter == "A" ||
+        $letter == "E" ||
+        $letter == "I" ||
+        $letter == "O" ||
+        $letter == "U" 
     ) {
         return true;
     }

@@ -23,6 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         console.log("error opening file");
     }
     else {
+        // Empty array to store words and vowels
+        $wordArray = array();
         // Read each line
         while (($line = fgets($file)) !== false ) {
             $count = 0;
@@ -36,7 +38,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $count++;
                 }
             }
-            echo $count;
+            // Add word and vowels to array
+            $wordArray[$word] = $count;
+        }
+        // Testing
+        foreach($wordArray as $k => $v) {
+            echo "$k: $v\n";
         }
     }
     // Close file

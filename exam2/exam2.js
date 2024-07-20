@@ -77,6 +77,53 @@ function addBtnHandler(elem) {
 var buttons = document.querySelectorAll(".vowel-btn");
 [].forEach.call(buttons, addBtnHandler);
 
+// Add data to corresponding list
+// key = word
+// value = vowels
+function organizeWords(data) {
+  // lists
+  const list1 = document.getElementById("list1");
+  const list2 = document.getElementById("list2");
+  const list3 = document.getElementById("list3");
+  const list4 = document.getElementById("list4");
+  const list5 = document.getElementById("list5");
+  const list6 = document.getElementById("list6");
+
+  for (const key in data) {
+    const value = data[key];
+
+    // New word to add to list
+    const newWord = document.createElement("li");
+    newWord.innerText = key;
+    newWord.classList.add("word");
+    newWord.draggable = true;
+
+    // Append to corresponding list
+    switch (value) {
+      case 1:
+        list1.appendChild(newWord);
+        break;
+      case 2:
+        list2.appendChild(newWord);
+        break;
+      case 3:
+        list3.appendChild(newWord);
+        break;
+      case 4:
+        list4.appendChild(newWord);
+        break;
+      case 5:
+        list5.appendChild(newWord);
+        break;
+      case 6:
+        list6.appendChild(newWord);
+        break;
+    }
+  }
+}
+
+// Add list as element
+
 // Loaded
 document.addEventListener("DOMContentLoaded", function () {
   // New request
@@ -89,8 +136,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // Update result
   request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status === 200) {
-      data = request.response;
-      console.log(JSON.stringify(data, null, 2));
+      organizeWords(request.response);
+      //console.log(JSON.stringify(data, null, 2));
     } else {
       console.log("Error with request");
     }

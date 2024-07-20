@@ -20,5 +20,5 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
-  request.send("text=" + encodeURIComponent(numbers));
+  request.send();
 });

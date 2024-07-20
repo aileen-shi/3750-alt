@@ -7,7 +7,7 @@ function isVowel($letter) {
         $letter == "e" ||
         $letter == "i" ||
         $letter == "o" ||
-        $letter == "u" ||
+        $letter == "u" 
     ) {
         return true;
     }
@@ -19,7 +19,10 @@ function isVowel($letter) {
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Open file
     $file = fopen('temp.txt', 'r');
-    if($file === true) {
+    if($file === false) {
+        console.log("error opening file");
+    }
+    else {
         // Read each line
         while (($line = fgets($file)) !== false ) {
             $count = 0;
@@ -36,5 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo $count;
         }
     }
+    // Close file
+    fclose($file);
 }
 ?>

@@ -123,7 +123,6 @@ function showCards() {
 
   request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status === 200) {
-      console.log("Counting");
       response = JSON.parse(request.responseText);
       totalCards = response.totalCount;
       cards.innerText = totalCards;
@@ -141,14 +140,13 @@ function nameClick(name) {
   const resultContainer = document.getElementById("result-container");
   resultContainer.innerHTML = "";
 
-  // Show cards that match that specific name
-  console.log(name);
+  // Filter cards that match that set
   var filter = response.data.filter((card) => card.name === name);
 
+  // Display each card
   filter.forEach((card) => {
     const cardItem = document.createElement("button");
     cardItem.textContent = `ID: ${card.id} Name: ${card.name} ${card.subtypes}`;
-    console.log(card.id);
     cardItem.classList.add("name-btn");
     cardItem.addEventListener("click", () => showDetail(card));
     resultContainer.appendChild(cardItem);

@@ -16,13 +16,14 @@ function isVowel($letter) {
     }
 }
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     // Open file
     $file = fopen('temp.txt', 'r');
     if($file === false) {
         console.log("error opening file");
     }
     else {
+        header('Content-Type: application/json');
         // Empty array to store words and vowels
         $wordArray = array();
         // Read each line
@@ -41,10 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Add word and vowels to array
             $wordArray[$word] = $count;
         }
-        // Testing
-        foreach($wordArray as $k => $v) {
-            echo "$k: $v\n";
-        }
+        echo json_encode($wordArray);
     }
     // Close file
     fclose($file);

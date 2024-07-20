@@ -10,13 +10,17 @@ document.addEventListener("DOMContentLoaded", function () {
   // New request
   var request = new XMLHttpRequest();
 
-  request.open("POST", "exam2.php", true);
+  request.open("GET", "exam2.php", true);
+  request.responseType = "json";
   request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
   // Update result
   request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status === 200) {
-      console.log(request.responseText);
+      data = request.response;
+      console.log(JSON.stringify(data, null, 2));
+    } else {
+      console.log("Error with request");
     }
   };
 

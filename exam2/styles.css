@@ -39,3 +39,11 @@ header {
   overflow: hidden;
   overflow-y: scroll;
 }
+
+.hidden {
+  visibility: hidden;
+}
+
+.visibile {
+  visibility: visible;
+}

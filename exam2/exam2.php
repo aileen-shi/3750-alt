@@ -23,7 +23,7 @@ function keyLength($a, $b) {
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     // Open file
-    $file = fopen('temp.txt', 'r');
+    $file = fopen('words-1.txt', 'r');
     if($file === false) {
         console.log("error opening file");
     }

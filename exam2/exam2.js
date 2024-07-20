@@ -62,9 +62,11 @@ function countUpdate() {
 
 // Show list on button click
 function showList(e) {
+  const list = e.currentTarget.nextElementSibling;
   // TESTING
   console.log(this.innerText);
-
+  list.classList.remove("hidden");
+  list.classList.add("visible");
   //
 }
 

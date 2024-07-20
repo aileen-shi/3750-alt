@@ -121,7 +121,7 @@ function organizeWords(data) {
         list6.appendChild(newWord);
         break;
       default:
-        console.log(newWord);
+        console.log(value, key);
     }
   }
 }

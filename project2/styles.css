@@ -84,3 +84,16 @@ h1 {
 .card-img {
   width: 20%;
 }
+
+section {
+  margin: 2rem;
+}
+
+section p {
+  margin: 1rem;
+}
+
+section h3 {
+  padding-top: 5rem;
+  text-align: center;
+}

@@ -16,6 +16,12 @@ function isVowel($letter) {
     }
 }
 
+// Compare length
+function keyLength($a, $b) {
+    return strlen($a) - strlen($b);
+}
+
+
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     // Open file
     $file = fopen('temp.txt', 'r');
@@ -42,6 +48,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             // Add word and vowels to array
             $wordArray[$word] = $count;
         }
+        // Sort by length with custom comparison
+        uksort($wordArray, "keyLength");
+
+        // Return
         echo json_encode($wordArray);
     }
     // Close file

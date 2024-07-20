@@ -1,0 +1,26 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  font-size: calc(10px + 1vw);
+  line-height: calc(1.1em + 0.5vw);
+}
+
+img {
+  display: block;
+  max-width: 50%;
+  margin: 2rem auto;
+}
+
+input,
+button {
+  font: inherit;
+}

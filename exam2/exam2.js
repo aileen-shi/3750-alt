@@ -136,8 +136,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // Update result
   request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status === 200) {
+      // Organize into lists
       organizeWords(request.response);
-      //console.log(JSON.stringify(data, null, 2));
+      // Add event handlers
+      var words = document.querySelectorAll(".word");
+      [].forEach.call(words, addDnDHandlers);
     } else {
       console.log("Error with request");
     }

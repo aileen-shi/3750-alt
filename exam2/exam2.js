@@ -84,6 +84,7 @@ var buttons = document.querySelectorAll(".vowel-btn");
 // value = vowels
 function organizeWords(data) {
   // lists
+  const list0 = document.getElementById("list0");
   const list1 = document.getElementById("list1");
   const list2 = document.getElementById("list2");
   const list3 = document.getElementById("list3");
@@ -102,6 +103,9 @@ function organizeWords(data) {
 
     // Append to corresponding list
     switch (value) {
+      case 0:
+        list0.appendChild(newWord);
+        break;
       case 1:
         list1.appendChild(newWord);
         break;

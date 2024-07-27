@@ -52,7 +52,7 @@ function searchAPI() {
   var orderBy = "name";
   var page = 1;
   var pageSize = 100;
-  var select = "id,name,types,subtypes,images,rules,artist,rarity";
+  var select = "id,name,types,subtypes,images,rules,artist,rarity,flavorText,cardmarket.prices.averageSellPrice";
 
   // API url
   var url = `https://api.pokemontcg.io/v2/cards?q=${encodeURIComponent(
@@ -65,6 +65,9 @@ function searchAPI() {
 
   request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status === 200) {
+        // Update help text
+  document.getElementById("help-text").innerText = "Displaying sets";
+
       // Container to store results
       const resultContainer = document.getElementById("result-container");
       // Reset results
@@ -147,7 +150,7 @@ function showCards() {
 // Show all cards with that name
 function nameClick(name) {
   // Update help text
-  document.getElementById("help-text").innerText = "Displaying sets";
+  document.getElementById("help-text").innerText = "Displaying cards";
 
   // Show back button
   currentName = name;
@@ -167,7 +170,7 @@ function nameClick(name) {
     cardImage.src = card.images.small;
     cardImage.classList.add("card-img");
     const cardItem = document.createElement("button");
-    cardItem.textContent = `Name: ${card.name} ${card.subtypes}`;
+    cardItem.textContent = `${card.name} ${card.subtypes}`;
     cardItem.classList.add("name-btn");
     cardItem.addEventListener("click", () => showDetail(card));
     resultContainer.appendChild(cardImage);
@@ -206,6 +209,12 @@ function showDetail(card) {
   rules.classList.add("card-text");
   resultContainer.appendChild(rules);
 
+  // Flavor Text
+  const flavor = document.createElement("p");
+  flavor.innerText = `Flavor Text: ${card.flavorText}`;
+  flavor.classList.add("card-text");
+  resultContainer.appendChild(flavor);
+
   // Artist
   const artist = document.createElement("p");
   artist.innerText = `Artist: ${card.artist}`;
@@ -217,6 +226,13 @@ function showDetail(card) {
   rarity.innerText = `Rarity: ${card.rarity}`;
   rarity.classList.add("card-text");
   resultContainer.appendChild(rarity);
+
+  // Price
+  const price = document.createElement("p");
+  price.innerText = `Price: ${card.cardmarket.prices.averageSellPrice}`;
+  price.classList.add("card-text");
+  resultContainer.appendChild(price);
+
 }
 
 // Back button

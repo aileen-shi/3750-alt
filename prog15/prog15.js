@@ -47,7 +47,7 @@ document.getElementById("view-all").addEventListener('click', function(event) {
 
 function show(entries) {
     const results = document.getElementById("result-container");
-    results = "";
+    results.innerHTML = "";
 
     for (i = 0; i < entries.length; i++) {
         // Create element

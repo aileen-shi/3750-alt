@@ -14,8 +14,9 @@ else {
 
 	if ($res) {
 		while ($newArray = mysqli_fetch_array($res, MYSQLI_ASSOC)) {
-			$id  = $newArray['id'];
-			$testField = $newArray['testField'];
+			$last_name  = $newArray['last_name'];
+			$first_name = $newArray['first_name'];
+            $email = $newArray['email'];
 			echo "Last Name: ".$last_name." First Name: ".$first_name. " Email: ".$email."<br>";
 	   	}
 	} else {

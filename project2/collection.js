@@ -109,8 +109,8 @@ function showSets() {
 
   request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status === 200) {
-      response = JSON.parse(request.responseText);
-      totalSets = response.totalCount;
+      responseSet = JSON.parse(request.responseText);
+      totalSets = responseSet.totalCount;
       sets.innerText = totalSets;
     } else {
       console.log("Error");
@@ -133,8 +133,8 @@ function showCards() {
 
   request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status === 200) {
-      response = JSON.parse(request.responseText);
-      totalCards = response.totalCount;
+      responseCard = JSON.parse(request.responseText);
+      totalCards = responseCard.totalCount;
       cards.innerText = totalCards;
     } else {
       console.log("Error");

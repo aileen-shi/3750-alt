@@ -168,7 +168,7 @@ function nameClick(name) {
   filter.forEach((card) => {
     const cardImage = document.createElement("img");
     cardImage.src = card.images.small;
-    cardImage.classList.add("card-img");
+    cardImage.classList.add("card-thumb");
     const cardItem = document.createElement("button");
     cardItem.textContent = `${card.name} ${card.subtypes}`;
     cardItem.classList.add("name-btn");
@@ -229,7 +229,7 @@ function showDetail(card) {
 
   // Price
   const price = document.createElement("p");
-  price.innerText = `Price: ${card.cardmarket.prices.averageSellPrice}`;
+  price.innerText = `Price: ${card.averageSellPrice}`;
   price.classList.add("card-text");
   resultContainer.appendChild(price);
 

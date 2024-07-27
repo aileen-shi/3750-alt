@@ -1,13 +1,30 @@
+/*
+    Aileen Shi
+    7/27/24
+    CPSC 3750
+    Database
+*/
+
 h1 {
-    margin: 2rem 1rem;
+    margin: 2rem;
 }
 
 #record-form {
-    margin: 1rem;
+    margin: 1rem 2rem;
 }
 form label, form input, button {
     margin-top: 1rem;
 }
+
+#view-all {
+  margin: auto;
+  display: block;
+}
+
+h2 {
+  margin: 2rem;
+}
+
 .person {
     background-color: lightgray;
     width: 50%;
@@ -50,3 +67,8 @@ form label, form input, button {
   .search-btn:hover {
     background-color: #38633b;
   }
+
+#result-container {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}

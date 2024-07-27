@@ -13,6 +13,7 @@ document.getElementById("record-form").addEventListener('submit', function(event
 
     request = new XMLHttpRequest();
 
+    // Response
     request.onreadystatechange = function() {
         if (request.readyState === 4 && request.status === 200) {
             console.log(request.responseText);
@@ -22,6 +23,7 @@ document.getElementById("record-form").addEventListener('submit', function(event
         }
     };
 
+    // Send request
     request.open("POST", "insert.php", true);
     request.send(data);
 });
@@ -31,6 +33,7 @@ document.getElementById("view-all").addEventListener('click', function(event) {
 
     request = new XMLHttpRequest();
 
+    // Response
     request.onreadystatechange = function() {
         if (request.readyState === 4 && request.status === 200) {
             entries = JSON.parse(request.responseText);
@@ -41,6 +44,7 @@ document.getElementById("view-all").addEventListener('click', function(event) {
         }
     }; 
     
+    // Send request
     request.open("GET", "viewall.php");
     request.send();
 });
@@ -50,6 +54,7 @@ document.getElementById("search-btn").addEventListener('click', function(event) 
     searchName = document.getElementById("search").value;
     request = new XMLHttpRequest();
 
+    // Response
     request.onreadystatechange = function() {
         if (request.readyState === 4 && request.status === 200) {
             entries = JSON.parse(request.responseText);
@@ -60,10 +65,12 @@ document.getElementById("search-btn").addEventListener('click', function(event) 
         }
     }; 
     
+    // Send request
     request.open("GET", "search.php?last_name=" + encodeURIComponent(searchName), true);
     request.send();
 });
 
+// Display entries
 function show(entries) {
     const results = document.getElementById("result-container");
     results.innerHTML = "";

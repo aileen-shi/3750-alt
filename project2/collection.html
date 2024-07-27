@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Pokemon Collection</title>
   </head>
   <body>
@@ -23,18 +24,24 @@
         <p>Current Cards:<span id="card-total"></span></p>
         <p>Current Sets:<span id="set-total"></span></p>
       </div>
-      <div class="info">
-        <h3 id="learn-more">
-          <a href="about.html">Learn more about the API</a>
-        </h3>
-      </div>
     </div>
+    <img src="pokeball.png">
     <!--Search and results-->
     <div class="search-container">
       <input type="text" id="search" name="search" placeholder="Pikachu" />
       <button type="button" id="search-btn" class="search-btn">Search</button>
     </div>
-    <div id="result-container"></div>
+    <p id="help-text">Type to begin</p>
+    <!--Results-->
+    <div id="result-container">
+      <button type="button" id="back"><i class="fa fa-arrow-left"></i> Back</button>
+    </div>
+    <!--About Footer-->
+    <footer>
+      <h3 id="learn-more">
+        <a href="about.html">Learn more about the API</a>
+      </h3>
+    </footer>
     <script src="collection.js"></script>
     <script src="../navbar.js"></script>
   </body>

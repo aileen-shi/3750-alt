@@ -28,17 +28,12 @@ h1 {
   padding: 1rem;
 }
 
-#learn-more {
-  text-align: center;
-  padding-top: 2.5rem;
-}
-
 .search-container {
   display: flex;
   justify-content: center;
   width: 70%;
   margin: 1rem auto;
-  padding: 3rem;
+  padding: 1.5rem;
   height: auto;
 }
 
@@ -61,6 +56,12 @@ h1 {
 
 .search-btn:hover {
   background-color: #38633b;
+}
+
+#back {
+  margin: auto;
+  display: block;
+  margin-bottom: 1rem;
 }
 
 .name-btn {
@@ -103,4 +104,20 @@ section p {
 section h3 {
   padding-top: 5rem;
   text-align: center;
+}
+
+#help-text {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #737373;
+}
+
+#learn-more {
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+footer {
+  background-color: #cae3cc;;
 }

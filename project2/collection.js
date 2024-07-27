@@ -6,11 +6,15 @@
 */
 
 var response = "";
+var currentName = "";
+var currentCard = "";
+var display = "";
 
 // Make sure document loaded
 document.addEventListener("DOMContentLoaded", function () {
   const search = document.getElementById("search");
   const searchBtn = document.getElementById("search-btn");
+  const backBtn = document.getElementById("back");
 
   // Update stats
   showSets();
@@ -26,6 +30,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // Search click
   searchBtn.addEventListener("click", function (event) {
     searchAPI();
+  });
+
+  // Add event listener back button
+  backBtn.addEventListener("click", function(event) {
+    goBack();
   });
 });
 
@@ -64,6 +73,7 @@ function searchAPI() {
       // Parse received data
       response = "";
       response = JSON.parse(request.responseText);
+
       // Extract names
       var names = response.data.map((card) => card.name);
       // Display unique
@@ -136,6 +146,11 @@ function showCards() {
 // Click name button
 // Show all cards with that name
 function nameClick(name) {
+  // Show back button
+  currentName = name;
+  display = "cards";
+  document.getElementById("back").style.visibility = "visible";
+  
   // Reset results container
   const resultContainer = document.getElementById("result-container");
   resultContainer.innerHTML = "";
@@ -155,6 +170,10 @@ function nameClick(name) {
 
 // Show details for card
 function showDetail(card) {
+  // Back button
+  currentCard = card;
+  display = "details";
+
   // Reset results container
   const resultContainer = document.getElementById("result-container");
   resultContainer.innerHTML = "";
@@ -189,3 +208,39 @@ function showDetail(card) {
   rarity.classList.add("card-text");
   resultContainer.appendChild(rarity);
 }
+
+// Back button
+function goBack() {
+  // Cards to sets
+  if (display = "cards") {
+    console.log("go back to sets");
+    // Container to store results
+    const resultContainer = document.getElementById("result-container");
+    // Reset results
+    resultContainer.innerHTML = "";
+
+    // Extract names
+    var names = response.data.map((card) => card.name);
+    // Display unique
+    // Get unique set and turn back into array
+    var unique = [...new Set(names)];
+
+    // Display each name as button
+    unique.forEach((name) => {
+      var button = document.createElement("button");
+      button.textContent = name;
+      button.classList.add("name-btn");
+      button.addEventListener("click", () => nameClick(name));
+      resultContainer.appendChild(button);
+    });
+    display = "sets";
+    document.getElementById("back").style.visibility = "hidden";
+  }
+  // Details to Cards
+  else if (display = "details") {
+    console.log("go back to cards");
+    nameClick(currentName);
+    display = "cards";
+  }
+}
+

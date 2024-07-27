@@ -146,6 +146,9 @@ function showCards() {
 // Click name button
 // Show all cards with that name
 function nameClick(name) {
+  // Update help text
+  document.getElementById("help-text").innerText = "Displaying sets";
+
   // Show back button
   currentName = name;
   display = "cards";
@@ -160,16 +163,23 @@ function nameClick(name) {
 
   // Display each card
   filter.forEach((card) => {
+    const cardImage = document.createElement("img");
+    cardImage.src = card.images.small;
+    cardImage.classList.add("card-img");
     const cardItem = document.createElement("button");
-    cardItem.textContent = `ID: ${card.id} Name: ${card.name} ${card.subtypes}`;
+    cardItem.textContent = `Name: ${card.name} ${card.subtypes}`;
     cardItem.classList.add("name-btn");
     cardItem.addEventListener("click", () => showDetail(card));
+    resultContainer.appendChild(cardImage);
     resultContainer.appendChild(cardItem);
   });
 }
 
 // Show details for card
 function showDetail(card) {
+  // Update help text
+  document.getElementById("help-text").innerText = "Displaying cards";
+
   // Back button
   currentCard = card;
   display = "details";
@@ -213,6 +223,7 @@ function showDetail(card) {
 function goBack() {
   // Cards to sets
   if (display == "cards") {
+    document.getElementById("help-text").innerText = "Displaying sets";
     console.log("go back to sets");
     // Container to store results
     const resultContainer = document.getElementById("result-container");

@@ -1,5 +1,5 @@
 /*
-    Aileen Shi
+  Aileen Shi
     7/27/24
     CPSC 3750
     Database
@@ -12,8 +12,12 @@ h1 {
 #record-form {
     margin: 1rem 2rem;
 }
-form label, form input, button {
+form label, button {
     margin-top: 1rem;
+}
+
+form label {
+  display: block;
 }
 
 #view-all {

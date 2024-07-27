@@ -1,0 +1,23 @@
+h1 {
+    margin: 2rem 1rem;
+}
+
+#record-form {
+    margin: 1rem;
+}
+form label, form input, button {
+    margin-top: 1rem;
+}
+#result-container {
+    width: 50%;
+    margin: auto;
+    background-color: red;
+}
+.person {
+    background-color: lightgray;
+    width: 50%;
+    margin: auto;
+    border-radius: 5px;
+    border: 1px solid darkgray;
+    margin-top: 1rem;
+}

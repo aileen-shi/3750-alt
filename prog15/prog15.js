@@ -32,7 +32,7 @@ document.getElementById("view-all").addEventListener('click', function(event) {
 
     request.onreadystatechange = function() {
         if (request.readyState === 4 && request.status === 200) {
-            entries = JSON.parse(request.responseText);
+            //entries = JSON.parse(request.responseText);
             console.log(entries);
         }
         else {

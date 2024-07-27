@@ -21,7 +21,7 @@ document.getElementById("record-form").addEventListener('submit', function(event
             console.log("error", request.statusText);
         }
     };
-    
+
     request.open("POST", "insert.php", true);
-    request.send(FormData);
+    request.send(data);
 });

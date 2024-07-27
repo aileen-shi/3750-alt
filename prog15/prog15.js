@@ -45,6 +45,25 @@ document.getElementById("view-all").addEventListener('click', function(event) {
     request.send();
 });
 
+// View by search
+document.getElementById("search-btn").addEventListener('click', function(event) {
+    searchName = document.getElementById("search").value;
+    request = new XMLHttpRequest();
+
+    request.onreadystatechange = function() {
+        if (request.readyState === 4 && request.status === 200) {
+            entries = JSON.parse(request.responseText);
+            show(entries);
+        }
+        else {
+            console.log("error", request.statusText);
+        }
+    }; 
+    
+    request.open("GET", "search.php.?last_name=" + encodeURIComponent(searchName), true);
+    request.send();
+});
+
 function show(entries) {
     const results = document.getElementById("result-container");
     results.innerHTML = "";

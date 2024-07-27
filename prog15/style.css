@@ -8,11 +8,6 @@ h1 {
 form label, form input, button {
     margin-top: 1rem;
 }
-#result-container {
-    width: 50%;
-    margin: auto;
-    background-color: red;
-}
 .person {
     background-color: lightgray;
     width: 50%;
@@ -21,3 +16,37 @@ form label, form input, button {
     border: 1px solid darkgray;
     margin-top: 1rem;
 }
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    margin: 1rem auto;
+    padding: 1.5rem;
+    height: auto;
+  }
+  
+  #search {
+    border-radius: 8px 0px 0px 8px;
+    border: 1px solid lightgray;
+    padding: 0.5rem;
+    float: left;
+    margin: 0;
+    flex: 1;
+  }
+  
+  .search-btn {
+    float: left;
+    width: 20%;
+    padding: 0.5rem;
+    border-radius: 0px 8px 8px 0px;
+    border: 1px solid lightgray;
+    background-color: #46ab4e;
+    color: white;
+    margin: 0;
+    height: 100%;
+  }
+  
+  .search-btn:hover {
+    background-color: #38633b;
+  }

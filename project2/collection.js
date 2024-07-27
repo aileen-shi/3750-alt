@@ -52,7 +52,7 @@ function searchAPI() {
   var orderBy = "name";
   var page = 1;
   var pageSize = 100;
-  var select = "id,name,types,subtypes,images,rules,artist,rarity,flavorText,cardmarket.prices.averageSellPrice";
+  var select = "id,name,types,subtypes,images,rules,artist,rarity,flavorText,cardmarket";
 
   // API url
   var url = `https://api.pokemontcg.io/v2/cards?q=${encodeURIComponent(
@@ -229,7 +229,7 @@ function showDetail(card) {
 
   // Price
   const price = document.createElement("p");
-  price.innerText = `Price: ${card.averageSellPrice}`;
+  price.innerText = `Price: ${card.cardmarket.prices.averageSellPrice}`;
   price.classList.add("card-text");
   resultContainer.appendChild(price);
 

@@ -52,7 +52,7 @@ function searchAPI() {
   var orderBy = "name";
   var page = 1;
   var pageSize = 100;
-  var select = "id,name,types,subtypes,images,rules,artist,rarity,flavorText,cardmarket";
+  var select = "id,hp,name,releaseDate,evolvesFrom,types,subtypes,images,rules,artist,rarity,flavorText,cardmarket";
 
   // API url
   var url = `https://api.pokemontcg.io/v2/cards?q=${encodeURIComponent(
@@ -203,6 +203,24 @@ function showDetail(card) {
   image.classList.add("card-img");
   resultContainer.appendChild(image);
 
+  // Release date
+  const release = document.createElement("p");
+  release.innerText = `Release Date: ${card.releaseDate}`;
+  release.classList.add("card-text");
+  resultContainer.appendChild(release);
+
+  // HP
+  const hp = document.createElement("p");
+  hp.innerText = `HP: ${card.hp}`;
+  hp.classList.add("card-text");
+  resultContainer.appendChild(hp);
+
+  // Evolves from
+  const evolves = document.createElement("p");
+  evolves.innerText = `Evolves: ${card.evolvesFrom}`;
+  evolves.classList.add("card-text");
+  resultContainer.appendChild(evolves);
+
   // Rules
   const rules = document.createElement("p");
   rules.innerText = `Rules: ${card.rules}`;
@@ -229,7 +247,7 @@ function showDetail(card) {
 
   // Price
   const price = document.createElement("p");
-  price.innerText = `Price: ${card.cardmarket.prices.averageSellPrice}`;
+  price.innerText = `Price: €${card.cardmarket.prices.averageSellPrice}`;
   price.classList.add("card-text");
   resultContainer.appendChild(price);
 

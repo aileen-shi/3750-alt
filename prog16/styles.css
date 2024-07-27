@@ -1,0 +1,31 @@
+h1 {
+    margin: 2rem 1rem;
+}
+#link {
+    text-align: center;
+    display: block;
+    margin-bottom: 1rem;
+
+}
+content {
+    margin: 1rem;
+}
+section {
+    margin-bottom: 1rem;
+}
+h2 {
+    margin-left: 2rem;
+}
+h3 {
+    margin: 1rem 2.5rem;
+}
+p {
+    margin-left: 3rem;
+}
+ol {
+    margin: 1.5rem;
+}
+figcaption {
+    text-align: center;
+    color: #4f4f4f;
+}

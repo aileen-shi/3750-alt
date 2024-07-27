@@ -181,7 +181,7 @@ function nameClick(name) {
 // Show details for card
 function showDetail(card) {
   // Update help text
-  document.getElementById("help-text").innerText = "Displaying cards";
+  document.getElementById("help-text").innerText = "Displaying card details";
 
   // Back button
   currentCard = card;

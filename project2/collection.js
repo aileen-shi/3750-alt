@@ -52,7 +52,7 @@ function searchAPI() {
   var orderBy = "name";
   var page = 1;
   var pageSize = 100;
-  var select = "id,hp,name,releaseDate,evolvesFrom,types,subtypes,images,rules,artist,rarity,flavorText,cardmarket";
+  var select = "id,hp,name,set,evolvesFrom,types,subtypes,images,rules,artist,rarity,flavorText,cardmarket";
 
   // API url
   var url = `https://api.pokemontcg.io/v2/cards?q=${encodeURIComponent(
@@ -205,7 +205,7 @@ function showDetail(card) {
 
   // Release date
   const release = document.createElement("p");
-  release.innerText = `Release Date: ${card.releaseDate}`;
+  release.innerText = `Release Date: ${card.set.releaseDate}`;
   release.classList.add("card-text");
   resultContainer.appendChild(release);
 
@@ -217,7 +217,7 @@ function showDetail(card) {
 
   // Evolves from
   const evolves = document.createElement("p");
-  evolves.innerText = `Evolves: ${card.evolvesFrom}`;
+  evolves.innerText = `Evolves From: ${card.evolvesFrom}`;
   evolves.classList.add("card-text");
   resultContainer.appendChild(evolves);
 
@@ -238,6 +238,12 @@ function showDetail(card) {
   artist.innerText = `Artist: ${card.artist}`;
   artist.classList.add("card-text");
   resultContainer.appendChild(artist);
+
+  // Total
+  const printTotal = document.createElement("p");
+  printTotal.innerText = `Total Printed: ${card.set.printedTotal}`;
+  printTotal.classList.add("card-text");
+  resultContainer.appendChild(printTotal);
 
   // Rarity
   const rarity = document.createElement("p");

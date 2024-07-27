@@ -72,6 +72,13 @@ h1 {
   margin: 1rem auto;
 }
 
+.card-thumb {
+  display: block;
+  margin: auto;
+  width: 10%;
+  padding: 1rem;
+}
+
 .card-text,
 .card-img,
 .card-header {

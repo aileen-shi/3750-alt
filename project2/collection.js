@@ -212,7 +212,7 @@ function showDetail(card) {
 // Back button
 function goBack() {
   // Cards to sets
-  if (display = "cards") {
+  if (display == "cards") {
     console.log("go back to sets");
     // Container to store results
     const resultContainer = document.getElementById("result-container");
@@ -237,7 +237,7 @@ function goBack() {
     document.getElementById("back").style.visibility = "hidden";
   }
   // Details to Cards
-  else if (display = "details") {
+  else if (display == "details") {
     console.log("go back to cards");
     nameClick(currentName);
     display = "cards";

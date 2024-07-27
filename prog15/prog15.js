@@ -60,7 +60,7 @@ document.getElementById("search-btn").addEventListener('click', function(event) 
         }
     }; 
     
-    request.open("GET", "search.php.?last_name=" + encodeURIComponent(searchName), true);
+    request.open("GET", "search.php?last_name=" + encodeURIComponent(searchName), true);
     request.send();
 });
 

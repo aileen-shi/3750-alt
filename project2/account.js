@@ -8,7 +8,11 @@ function checkLogin() {
     // Response
     request.onreadystatechange = function() {
         if (request.readyState === 4 && request.status === 200) {
-            console.log(request.respsonseText);
+            response = JSON.parse(request.responseText);
+            // Redirect if not logged in
+            if (!response.loggedin) {
+                window.location.href = "login.html";
+            }
         }
         else {
             console.log("error", request.statusText);

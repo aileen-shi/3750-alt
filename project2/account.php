@@ -1,14 +1,13 @@
 <?php
     session_start();
 
-    echo "account php";
-    // If logged in show account page
-    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+    $response = array("loggedin" => false);
 
+    echo "account php";
+    // User logged in
+    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+        $response["loggedin"] = true;
     }
-    // Get user to log in
-    else {
-        header("Location: login.html");
-        exit;
-    }
+    header('Content-Type: application/json');
+    echo json_encode($response);
 ?>

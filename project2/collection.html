@@ -24,6 +24,9 @@
         <p>Current Cards:<span id="card-total"></span></p>
         <p>Current Sets:<span id="set-total"></span></p>
       </div>
+      <div id="account-container" class="info">
+        <button class="center-btn" id="account-btn">ACCOUNT INFO</button>
+      </div>
     </div>
     <img src="pokeball.png">
     <!--Search and results-->
@@ -31,10 +34,14 @@
       <input type="text" id="search" name="search" placeholder="Pikachu" />
       <button type="button" id="search-btn" class="search-btn">Search</button>
     </div>
-    <p id="help-text">Type to begin</p>
+    <button type="button" id="show-all">Show All</button>
     <!--Results-->
     <button type="button" id="back"><i class="fa fa-arrow-left"></i> Back</button>
     <div id="result-container">
+    </div>
+    <div id="nav-container">
+      <button type="button" id="previous"><i class="fa fa-arrow-left"></i></button>
+      <button type="button" id="next"><i class="fa fa-arrow-right"></i></button>
     </div>
     <!--About Footer-->
     <footer>

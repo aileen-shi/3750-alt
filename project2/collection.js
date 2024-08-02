@@ -8,13 +8,29 @@
 var response = "";
 var currentName = "";
 var currentCard = "";
-var display = "";
+const pageSize = 100;
+var currentPage = 1;
 
 // Make sure document loaded
 document.addEventListener("DOMContentLoaded", function () {
   const search = document.getElementById("search");
   const searchBtn = document.getElementById("search-btn");
-  const backBtn = document.getElementById("back");
+  const showAll = document.getElementById("show-all");
+  const previous = document.getElementById("previous");
+  const next = document.getElementById("next");
+  const account = document.getElementById("account-btn");
+
+  // Event listener for previous and next buttons
+  previous.addEventListener("click", function(event) {
+    if (currentPage > 1) {
+      currentPage--;
+    }
+    searchAPI();
+  });
+  next.addEventListener("click", function(event) {
+    currentPage++;
+    searchAPI();
+  });
 
   // Update stats
   showSets();
@@ -23,18 +39,25 @@ document.addEventListener("DOMContentLoaded", function () {
   // Search Enter
   search.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
+      currentPage = 1;
       searchAPI();
     }
   });
 
   // Search click
   searchBtn.addEventListener("click", function (event) {
+    currentPage = 1;
     searchAPI();
   });
 
-  // Add event listener back button
-  backBtn.addEventListener("click", function(event) {
-    goBack();
+  // Add event listener show all button
+  showAll.addEventListener("click", function(event) {
+    searchAPI();
+  });
+
+  // Event listener account info
+  account.addEventListener("click", function(event) {
+    window.location.assign("https://aileenshi.com/project2/account");
   });
 });
 
@@ -50,14 +73,12 @@ function searchAPI() {
   var input = document.getElementById("search").value;
   var query = input ? `name:${encodeURIComponent(input)}*` : "";
   var orderBy = "name";
-  var page = 1;
-  var pageSize = 100;
   var select = "id,hp,name,set,evolvesFrom,types,subtypes,images,rules,artist,rarity,flavorText,cardmarket";
 
   // API url
   var url = `https://api.pokemontcg.io/v2/cards?q=${encodeURIComponent(
     query
-  )}&page=${page}&pageSize=${pageSize}&orderBy=${encodeURIComponent(
+  )}&page=${currentPage}&pageSize=${pageSize}&orderBy=${encodeURIComponent(
     orderBy
   )}&select=${encodeURIComponent(select)}`;
   request.open("GET", url, true);
@@ -65,8 +86,16 @@ function searchAPI() {
 
   request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status === 200) {
-        // Update help text
-  document.getElementById("help-text").innerText = "Displaying sets";
+
+      // Previous and next buttons
+      if (currentPage == 1) {
+        document.getElementById("next").style.visibility = "visible";
+      }
+      else {
+        document.getElementById("previous").style.visibility = "visible";
+        document.getElementById("next").style.visibility = "visible";
+      }
+
 
       // Container to store results
       const resultContainer = document.getElementById("result-container");
@@ -87,8 +116,8 @@ function searchAPI() {
       unique.forEach((name) => {
         var button = document.createElement("button");
         button.textContent = name;
-        button.classList.add("name-btn");
-        button.addEventListener("click", () => nameClick(name));
+        button.classList.add("set-btn");
+        button.addEventListener("click", () => nameClick(name, button));
         resultContainer.appendChild(button);
       });
     } else {
@@ -148,19 +177,7 @@ function showCards() {
 
 // Click name button
 // Show all cards with that name
-function nameClick(name) {
-  // Update help text
-  document.getElementById("help-text").innerText = "Displaying cards";
-
-  // Show back button
-  currentName = name;
-  display = "cards";
-  document.getElementById("back").style.visibility = "visible";
-  
-  // Reset results container
-  const resultContainer = document.getElementById("result-container");
-  resultContainer.innerHTML = "";
-
+function nameClick(name, set) {
   // Filter cards that match that set
   var filter = response.data.filter((card) => card.name === name);
 
@@ -168,40 +185,36 @@ function nameClick(name) {
   filter.forEach((card) => {
     const cardImage = document.createElement("img");
     cardImage.src = card.images.small;
-    cardImage.classList.add("card-thumb");
+    cardImage.classList.add("card-img");
     const cardItem = document.createElement("button");
     cardItem.textContent = `${card.name} ${card.subtypes}`;
     cardItem.classList.add("name-btn");
-    cardItem.addEventListener("click", () => showDetail(card));
-    resultContainer.appendChild(cardImage);
-    resultContainer.appendChild(cardItem);
+    cardItem.addEventListener("click", () => showDetail(card, cardImage));
+    set.insertAdjacentElement("afterend", cardImage);
+    set.insertAdjacentElement("afterend", cardItem);
   });
 }
 
 // Show details for card
-function showDetail(card) {
-  // Update help text
-  document.getElementById("help-text").innerText = "Displaying card details";
-
-  // Back button
-  currentCard = card;
-  display = "details";
+function showDetail(card, cardImage) {
 
   // Reset results container
-  const resultContainer = document.getElementById("result-container");
-  resultContainer.innerHTML = "";
+  const resultContainer = document.createElement("detail-container");
 
   // Name
   const name = document.createElement("h4");
-  name.innerText = `${card.name} ${card.subtypes}`;
+  name.innerText = `${card.name} ${card.subtypes} Details`;
   name.classList.add("card-header");
   resultContainer.appendChild(name);
 
-  // Image
-  const image = document.createElement("img");
-  image.src = card.images.small;
-  image.classList.add("card-img");
-  resultContainer.appendChild(image);
+  // Add card to collection button
+  const addCard = document.createElement("button");
+  addCard.textContent = "Add to Collection"
+  addCard.classList.add("center-btn");
+  resultContainer.appendChild(addCard);
+  addCard.addEventListener("click", function(event) {
+    console.log("adding to collection");
+  });
 
   // Release date
   const release = document.createElement("p");
@@ -257,41 +270,6 @@ function showDetail(card) {
   price.classList.add("card-text");
   resultContainer.appendChild(price);
 
+  cardImage.insertAdjacentElement("afterend", resultContainer);
+
 }
-
-// Back button
-function goBack() {
-  // Cards to sets
-  if (display == "cards") {
-    document.getElementById("help-text").innerText = "Displaying sets";
-    console.log("go back to sets");
-    // Container to store results
-    const resultContainer = document.getElementById("result-container");
-    // Reset results
-    resultContainer.innerHTML = "";
-
-    // Extract names
-    var names = response.data.map((card) => card.name);
-    // Display unique
-    // Get unique set and turn back into array
-    var unique = [...new Set(names)];
-
-    // Display each name as button
-    unique.forEach((name) => {
-      var button = document.createElement("button");
-      button.textContent = name;
-      button.classList.add("name-btn");
-      button.addEventListener("click", () => nameClick(name));
-      resultContainer.appendChild(button);
-    });
-    display = "sets";
-    document.getElementById("back").style.visibility = "hidden";
-  }
-  // Details to Cards
-  else if (display == "details") {
-    console.log("go back to cards");
-    nameClick(currentName);
-    display = "cards";
-  }
-}
-

@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Event listener account info
   account.addEventListener("click", function(event) {
-    window.location.assign("https://aileenshi.com/project2/account");
+    window.location.assign("https://aileenshi.com/project2/account.html");
   });
 });
 

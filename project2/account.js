@@ -98,7 +98,6 @@ function show(entries) {
         button.classList.add("remove-btn");
         button.innerText = "Remove";
         button.addEventListener("click", function(event) {
-            console.log("removing");
         });
 
         results.appendChild(button);
@@ -106,6 +105,7 @@ function show(entries) {
 }
 
 function removeFavorite(name, dateAdded){
+    console.log("removing");
     // Data to pass
     data = {
         nameStr: name,
@@ -126,6 +126,7 @@ function removeFavorite(name, dateAdded){
                 // Update
                 viewFavorites();
             }
+            console.log(request.responseText);
         }
         else {
             console.log("error", request.statusText);

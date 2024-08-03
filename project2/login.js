@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Send register form to php
     document.getElementById("login-form").addEventListener("submit", function(event) {
         event.preventDefault();
-        data = new FormData(document.getElementById("login-form"));
+        //data = new FormData(document.getElementById("login-form"));
 
         request = new XMLHttpRequest();
 
@@ -32,7 +32,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Send request
         request.open("POST", "login.php", true);
-        request.send(data);
+        //request.send(data);
+        request.send();
     });
 });
 

@@ -20,7 +20,7 @@
         // Query
         $sql = "SELECT * FROM User_Login WHERE username='$clean_user' AND pass='$clean_pass'";
         $test = "SELECT * FROM User_Login";
-        $res = mysqli_query($mysqli, $sql);
+        $res = mysqli_query($mysqli, $test);
 
         //echo $clean_user . " " . $clean_pass;
         $entries = array();

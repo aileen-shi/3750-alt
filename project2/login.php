@@ -26,7 +26,7 @@
             if (mysqli_num_rows($res) > 0) {
                 echo "Success";
             } else {
-                echo "Failed";    
+                echo "Incorrect combo";    
             }
         }
         else {

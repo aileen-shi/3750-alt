@@ -1,5 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
     viewAll();
+
+    const button = document.getElementById("back-to-home");
+
+    button.addEventListener("click", function (event) {
+        window.location.assign("https://aileenshi.com/project2/collection.html");
+    })
 });
 
 function viewAll() {
@@ -43,7 +49,7 @@ function show(entries) {
         const login = document.createElement("p");
         login.innerText = `Last Login: ${entries[i].num_login}`;
         login.classList.add("entry-text");
-        entry.appendChild(user);
+        entry.appendChild(login);
 
         // number logins
         const numLogin = document.createElement("p");

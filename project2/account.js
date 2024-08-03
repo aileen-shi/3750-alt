@@ -60,7 +60,7 @@ function show(entries) {
     const results = document.getElementById("favorites-container");
     results.innerHTML = "";
 
-    for (i = 0; i < entries.length; i++) {
+    for (let i = 0; i < entries.length; i++) {
         // Create element
         const entryContainer = document.createElement("div");
         entryContainer.classList.add("entry-container");
@@ -97,6 +97,7 @@ function show(entries) {
         const button = document.createElement("button");
         button.classList.add("remove-btn");
         button.innerText = "Remove";
+
         button.addEventListener("click", function(event) {
             removeFavorite(entries[i].card_name, entries[i].time_added);
         });

@@ -18,14 +18,14 @@ document.addEventListener("DOMContentLoaded", function () {
         request.onreadystatechange = function() {
             if (request.readyState === 4 && request.status === 200) {
                 //entries = JSON.parse(request.responseText);
-                console.log(request.responseText);/*
+                console.log(request.responseText);
                 if (request.responseText == "Success") {
                     window.location.href = "account.html";
                 }
                 else {
                     alert("Incorrect user and/or password");
                 }
-                    */
+                    
             }
             else {
                 console.log("error", request.statusText);

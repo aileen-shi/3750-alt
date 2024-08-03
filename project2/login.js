@@ -10,14 +10,14 @@ document.addEventListener("DOMContentLoaded", function () {
     // Send register form to php
     document.getElementById("login-form").addEventListener("submit", function(event) {
         event.preventDefault();
-        //data = new FormData(document.getElementById("login-form"));
+        data = new FormData(document.getElementById("login-form"));
 
         request = new XMLHttpRequest();
 
         // Response
         request.onreadystatechange = function() {
             if (request.readyState === 4 && request.status === 200) {
-                console.log("Inside if");/*
+                console.log(request.responseText);/*
                 if (request.responseText == "Success") {
                     window.location.href = "account.html";
                 }
@@ -32,9 +32,8 @@ document.addEventListener("DOMContentLoaded", function () {
         };
 
         // Send request
-        request.open("POST", "test.php", true);
-        //request.send(data);
-        request.send();
+        request.open("POST", "login.php", true);
+        request.send(data);
     });
 });
 

@@ -68,17 +68,17 @@ function show(entries) {
         entry.appendChild(cardYear);
         // rarity
         const rarity = document.createElement("p");
-        rarity.innerText = `Email: ${entries[i].rarity}`;
+        rarity.innerText = `Rarity: ${entries[i].rarity}`;
         rarity.classList.add("entry-text");
         entry.appendChild(rarity);  
         // price
         const price = document.createElement("p");
-        price.innerText = `Email: ${entries[i].price}`;
+        price.innerText = `Price: €${entries[i].price}`;
         price.classList.add("entry-text");
         entry.appendChild(price);  
         // date added
         const cardDate = document.createElement("p");
-        cardDate.innerText = `Email: ${entries[i].date}`;
+        cardDate.innerText = `Time Added: ${entries[i].time_added}`;
         cardDate.classList.add("entry-text");
         entry.appendChild(cardDate);
 

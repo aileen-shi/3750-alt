@@ -16,11 +16,12 @@ function checkLogin() {
     // Response
     request.onreadystatechange = function() {
         if (request.readyState === 4 && request.status === 200) {
-            response = JSON.parse(request.responseText);
+            //response = JSON.parse(request.responseText);
             // Redirect if not logged in
-            if (!response.loggedin) {
+            if (request.responseText == "not loggedin") {
                 window.location.href = "login.html";
             }
+            console.log(request.responseText);
         }
         else {
             console.log("error", request.statusText);

@@ -6,7 +6,11 @@
     // User logged in
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
         $response["loggedin"] = true;
+        echo "loggedin" . $_SESSION['user'];
     }
-    header('Content-Type: application/json');
-    echo json_encode($response);
+    else {
+        echo "not loggedin";
+    }
+    //header('Content-Type: application/json');
+    
 ?>

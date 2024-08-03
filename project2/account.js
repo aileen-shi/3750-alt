@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
     checkLogin();
-    //viewFavorites();
 
     // Back to App
     const button = document.getElementById("back-to-home");
@@ -21,7 +20,10 @@ function checkLogin() {
             if (request.responseText == "not loggedin") {
                 window.location.href = "login.html";
             }
-            console.log(request.responseText);
+            // User is already logged in
+            else {
+                viewFavorites();
+            }
         }
         else {
             console.log("error", request.statusText);

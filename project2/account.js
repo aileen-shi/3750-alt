@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     checkLogin();
-    viewFavorites();
+    //viewFavorites();
 
     // Back to App
     const button = document.getElementById("back-to-home");
@@ -105,6 +105,6 @@ function show(entries) {
 }
 
 function removeFavorite(name, dateAdded){
-    $user = $_SESSION['user'];
+    
 
 }

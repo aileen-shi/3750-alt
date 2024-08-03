@@ -30,7 +30,7 @@
             while ($row = mysqli_fetch_assoc($res)) {
                 $entries[] = $row;
             }
-            echo $entries;
+            echo json_encode($entries);
             /*
             if (mysqli_num_rows($res) > 0) {
                 echo "Success";

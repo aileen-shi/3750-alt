@@ -17,13 +17,14 @@ document.addEventListener("DOMContentLoaded", function () {
         // Response
         request.onreadystatechange = function() {
             if (request.readyState === 4 && request.status === 200) {
-                console.log("Inside if");
+                console.log("Inside if");/*
                 if (request.responseText == "Success") {
                     window.location.href = "account.html";
                 }
                 else {
                     alert("Incorrect user and/or password");
                 }
+                    */
             }
             else {
                 console.log("error", request.statusText);

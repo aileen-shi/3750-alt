@@ -8,7 +8,6 @@ document.getElementById("register-form").addEventListener("submit", function(eve
     // Response
     request.onreadystatechange = function() {
         if (request.readyState === 4 && request.status === 200) {
-            console.log(request.responseText);
             if (request.responseText == "Success") {
                 window.location.href = "login.html";
             }

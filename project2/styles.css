@@ -5,6 +5,8 @@
     Project 2
 */
 
+/*Collection App */
+
 h1 {
   margin: 2rem;
   margin-bottom: 3rem;
@@ -192,4 +194,25 @@ footer {
 .entry-text {
   margin: 0.5rem;
 
+}
+
+/* Login */
+#login-form, #register-form {
+  width: 50%;
+  margin: auto;
+}
+
+#login-form input, #register-form input {
+  margin: auto;
+  margin-top: 1rem;
+}
+
+.decoration {
+  width: 20%;
+  margin: auto;
+  display: block;
+}
+ 
+#login-form button {
+  margin-left: 2rem;
 }

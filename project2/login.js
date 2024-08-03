@@ -1,10 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
     const register = document.getElementById("register");
     const loginForm = document.getElementById("login-form");
+    const back = document.getElementById("back-to-home");
 
+    // Go to register page
     register.addEventListener("click", function(event) {
-        //window.location.assign("https://aileenshi.com/project2/register.html");
         window.location.href = "register.html";
+    });
+
+    // Go back home
+    back.addEventListener("click", function(event) {
+        window.location.href = "collection.html";
     });
 
     // Send register form to php

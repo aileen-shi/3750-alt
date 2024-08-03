@@ -4,18 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <!--Login form-->
+    <h1>Login</h1>
+    <img src="pikachu.png" class="decoration">
     <form id="login-form">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required>
+        <br>
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
         <button type="submit" name="submit" value="login">Login</button>
     </form>
-    <button type="button" id="register">Register Account</button>   
+    <br>
+    <button type="button" id="register" class="center-btn">Register New Account</button>   
     <button type="button" id="back-to-home" class="center-btn"><i class="fa fa-arrow-left"></i> Back to App</button>
     <script src="login.js"></script>
     <script src="../navbar.js"></script>

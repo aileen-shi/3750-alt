@@ -47,7 +47,7 @@ function show(entries) {
 
         // last login
         const login = document.createElement("p");
-        login.innerText = `Last Login: ${entries[i].num_login}`;
+        login.innerText = `Last Login: ${entries[i].last_login}`;
         login.classList.add("entry-text");
         entry.appendChild(login);
 

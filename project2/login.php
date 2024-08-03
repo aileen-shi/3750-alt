@@ -28,6 +28,12 @@
                 echo "Success";
                 $_SESSION['user'] = $clean_user;
                 $_SESSION['loggedin'] = true;
+                // Update login
+                date_default_timezone_set('America/New_York');
+                $login_date = date('Y-m-d H:i:s');
+                $update = "UPDATE * FROM User_Login
+                            SET last_login='$login_date', num_login=num_login + 1 
+                            WHERE username='$clean_user' AND pass='$clean_pass'";
             } else {
                 echo "Incorrect combo";    
             }

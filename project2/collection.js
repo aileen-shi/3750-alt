@@ -303,6 +303,7 @@ function addFavorites(card) {
       if (request.responseText == "Please login first") {
         alert(request.responseText);
       }
+      console.log(request.responseText);
     }
     else {
       console.error("Error: ", request.statusText);

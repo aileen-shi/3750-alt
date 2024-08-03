@@ -15,7 +15,6 @@ function checkLogin() {
     // Response
     request.onreadystatechange = function() {
         if (request.readyState === 4 && request.status === 200) {
-            //response = JSON.parse(request.responseText);
             // Redirect if not logged in
             if (request.responseText == "not loggedin") {
                 window.location.href = "login.html";
@@ -107,6 +106,32 @@ function show(entries) {
 }
 
 function removeFavorite(name, dateAdded){
-    
+    // Data to pass
+    data = {
+        nameStr: name,
+        dateStr: dateAdded
+    };
+    jsonData = JSON.stringify(data);
 
+    // Request
+    request = new XMLHttpRequest();
+    request.open('POST', 'removefavorite.php', true);
+    request.setRequestHeader('Content-Type', 'application/json');
+
+    // Response
+    request.onreadystatechange = function() {
+        if (request.readyState === 4 && request.status === 200) {
+            if (request.responseText == "Successfully deleted entry") {
+                alert(request.responseText);
+                // Update
+                viewFavorites();
+            }
+        }
+        else {
+            console.log("error", request.statusText);
+        }
+    };
+
+    // Send request
+    request.send(jsonData);    
 }

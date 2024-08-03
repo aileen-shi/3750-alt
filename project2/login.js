@@ -17,8 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
         // Response
         request.onreadystatechange = function() {
             if (request.readyState === 4 && request.status === 200) {
-                entries = JSON.parse(request.responseText);
-                console.log(entries);/*
+                //entries = JSON.parse(request.responseText);
+                console.log(request.responseText);/*
                 if (request.responseText == "Success") {
                     window.location.href = "account.html";
                 }

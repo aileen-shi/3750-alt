@@ -22,29 +22,24 @@
         $test = "SELECT * FROM User_Login WHERE username=TestUser AND pass=password";
         $res = mysqli_query($mysqli, $test);
 
-        //echo $clean_user . " " . $clean_pass;
         $entries = array();
 
         // Handle data
         if ($res) {
-            while ($row = mysqli_fetch_assoc($res)) {
-                $entries[] = $row;
-            }
-            echo json_encode($entries);
-            /*
+            
             if (mysqli_num_rows($res) > 0) {
                 echo "Success";
             } else {
                 echo "Incorrect combo";    
             }
             mysqli_free_result($res);
-            */
+            
         }
-        /*
+        
         else {
             echo "Query error";
         }
-            */
+            
 
 
         mysqli_close($mysqli);

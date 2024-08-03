@@ -19,7 +19,7 @@ else {
     $num_login = 0;
 
 
-    $sql = "INSERT INTO User_Login (username, pass, email, registration, last_login, num_login) VALUES ('$clean_user', '$clean_email', '$clean_pass', '$reg_date', '$login_date', '$num_login')";
+    $sql = "INSERT INTO User_Login (username, pass, email, registration, last_login, num_login) VALUES ('$clean_user', '$clean_pass', '$clean_email', '$reg_date', '$login_date', '$num_login')";
     $res = mysqli_query($mysqli, $sql);
 
     if ($res == TRUE) {

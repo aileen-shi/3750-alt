@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     checkLogin();
+
 });
 
 function checkLogin() {
@@ -23,3 +24,6 @@ function checkLogin() {
     request.open("POST", "account.php", true);
     request.send();
 }
+
+// Get favorites
+function viewFavorites() {}

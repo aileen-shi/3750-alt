@@ -34,6 +34,7 @@
                 $update = "UPDATE * FROM User_Login
                             SET last_login='$login_date', num_login=num_login + 1 
                             WHERE username='$clean_user' AND pass='$clean_pass'";
+                $res = mysqli_query($mysqli, $sql);
             } else {
                 echo "Incorrect combo";    
             }

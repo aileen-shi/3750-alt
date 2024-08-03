@@ -177,3 +177,9 @@ footer {
   display: flex;
   justify-content: space-between;
 }
+
+.entry {
+  width: 50%;
+  margin: auto;
+  background-color: lightgray;
+}

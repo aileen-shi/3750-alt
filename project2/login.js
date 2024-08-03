@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const register = document.getElementById("register");
-    const login = document.getElementById("login-form");
+    const loginForm = document.getElementById("login-form");
 
     register.addEventListener("click", function(event) {
         //window.location.assign("https://aileenshi.com/project2/register.html");
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
         };
 
         // Send request
-        request.open("POST", "login.php", true);
+        request.open("POST", "test.php", true);
         //request.send(data);
         request.send();
     });

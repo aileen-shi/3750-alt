@@ -19,17 +19,26 @@
 
         // Query
         $sql = "SELECT * FROM User_Login WHERE username='$clean_user' AND pass='$clean_pass'";
+        $test = "SELECT * FROM User_Login";
         $res = mysqli_query($mysqli, $sql);
 
         echo $clean_user . " " . $clean_pass;
+        $entries = array();
 
         // Handle data
         if ($res) {
+            while ($row = mysqli_fetch_assoc($res)) {
+                $entries[] = $row;
+            }
+            echo $entries;
+            /*
             if (mysqli_num_rows($res) > 0) {
                 echo "Success";
             } else {
                 echo "Incorrect combo";    
             }
+            mysqli_free_result($res);
+            */
         }
         else {
             echo "Query error";

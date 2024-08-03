@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function viewAll() {
     // Response
+    request = new XMLHttpRequest();
     request.onreadystatechange = function() {
         if (request.readyState === 4 && request.status === 200) {
             entries = JSON.parse(request.responseText);

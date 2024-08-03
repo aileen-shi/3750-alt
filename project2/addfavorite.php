@@ -18,8 +18,7 @@
     else {
         $raw = file_get_contents('php://input');
         $data = json_decode($raw, true);
-        echo "before if";
-        /*
+
         if ($data) {
             echo "decoding data";
             $cardName = $data['nameStr'];
@@ -33,6 +32,8 @@
             $sql = "INSERT INTO Favorites (card_name, card_year, rarity, price, time_added, username)
                     VALUES ('$cardName', '$cardYear', '$cardRarity', '$cardPrice', '$date', '$user')";
 
+            echo $sql;
+            /*
             if ($mysqli->query($sql) === TRUE) {
                 echo "Successfully created entry";
             }

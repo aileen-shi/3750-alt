@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     checkLogin();
-
+    viewFavorites();
 });
 
 function checkLogin() {
@@ -33,6 +33,8 @@ function viewFavorites() {
     request.onreadystatechange = function() {
         if (request.readyState === 4 && request.status === 200) {
             response = JSON.parse(request.responseText);
+            console.log(response);
+            show(response);
         }
         else {
             console.log("error", request.statusText);

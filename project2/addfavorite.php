@@ -32,7 +32,7 @@
                     VALUES ('$cardName', '$cardYear', '$cardRarity', '$cardPrice', '$date', '$user')";      
                  
             if ($mysqli->query($sql) === TRUE) {
-                echo "Successfully created entry";
+                echo "Successfully added to collection";
             }
             else {
                 echo "Error:" . $mysql->error;

@@ -172,3 +172,9 @@ footer {
   background-color: #cae3cc;;
 }
 
+/*Accounts Page*/
+#favorites-container {
+  display: flex;
+  justify-content: space-between;
+}
+

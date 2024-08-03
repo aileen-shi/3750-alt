@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function checkLogin() {
     request = new XMLHttpRequest();
-
+    console.log("checcking login");
     // Response
     request.onreadystatechange = function() {
         if (request.readyState === 4 && request.status === 200) {

@@ -173,18 +173,18 @@ footer {
 }
 
 /*Accounts Page*/
-#favorites-container {
+.entry-container {
   display: flex;
   justify-content: center;
+
 }
 
 .entry {
-  width: 50%;
-  margin: auto;
-  margin-right: 0;
+  
   background-color: lightgray;
 }
 
 .entry-text {
   margin: 0.5rem;
+
 }

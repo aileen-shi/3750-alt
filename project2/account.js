@@ -62,6 +62,8 @@ function show(entries) {
 
     for (i = 0; i < entries.length; i++) {
         // Create element
+        const entryContainer = document.createElement("div");
+        entryContainer.classList.add("entry-container");
         const entry = document.createElement("div");
         entry.classList.add("entry");
 
@@ -90,17 +92,19 @@ function show(entries) {
         cardDate.innerText = `Time Added: ${entries[i].time_added}`;
         cardDate.classList.add("entry-text");
         entry.appendChild(cardDate);
-
-        results.appendChild(entry);
         
         // Button to remove
         const button = document.createElement("button");
         button.classList.add("remove-btn");
         button.innerText = "Remove";
         button.addEventListener("click", function(event) {
+            removeFavorite(entries[i].card_name, entries[i].time_added);
         });
 
-        results.appendChild(button);
+        entryContainer.appendChild(entry);
+        entryContainer.appendChild(button);
+
+        results.appendChild(entryContainer);
     }
 }
 

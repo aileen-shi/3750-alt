@@ -6,7 +6,8 @@
         echo "Please login first";
         exit();
     }
-
+    echo "Passed login check";
+    /*
     // Connect
     $mysqli = mysqli_connect("192.81.214.86", "aileen", "i-heart-deftones-and-cats", "cpsc_3750");
 
@@ -44,4 +45,5 @@
             echo "Invalid JSON data";
         }
     }
+        */
 ?>

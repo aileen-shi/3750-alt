@@ -21,6 +21,8 @@
         $sql = "SELECT * FROM User_Login WHERE username='$clean_user' AND pass='$clean_pass'";
         $res = mysqli_query($mysqli, $sql);
 
+        echo $clean_user . " " . $clean_pass;
+
         // Handle data
         if ($res) {
             if (mysqli_num_rows($res) > 0) {

@@ -300,7 +300,9 @@ function addFavorites(card) {
   // Response
   request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status === 200) {
-      console.log("Success");
+      if (request.responseText == "Please login first") {
+        alert(request.responseText);
+      }
     }
     else {
       console.error("Error: ", request.statusText);

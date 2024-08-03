@@ -1,6 +1,7 @@
 <?php 
     session_start();
 
+
     // Connect
     $mysqli = mysqli_connect("192.81.214.86", "aileen", "i-heart-deftones-and-cats", "cpsc_3750");
 

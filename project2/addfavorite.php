@@ -16,9 +16,11 @@
         exit();
     } 
     else {
+        echo "else";
         $raw = file_get_contents('php://input');
         $data = json_decode($raw, true);
         if ($data) {
+            echo "decoding data";
             $cardName = $data['nameStr'];
             $cardYear = $data['yearStr'];
             $cardRarity = $data['rarityStr'];

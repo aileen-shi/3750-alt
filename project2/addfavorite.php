@@ -16,11 +16,10 @@
         exit();
     } 
     else {
-        echo "Connected to sql";
-        /*
-        echo "else";
         $raw = file_get_contents('php://input');
         $data = json_decode($raw, true);
+        echo "before if";
+        /*
         if ($data) {
             echo "decoding data";
             $cardName = $data['nameStr'];

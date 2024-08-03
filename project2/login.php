@@ -19,7 +19,7 @@
 
         // Query
         $sql = "SELECT * FROM User_Login WHERE username='$clean_user' AND pass='$clean_pass'";
-        $test = "SELECT * FROM User_Login WHERE username=TestUser AND pass=password";
+        $test = "SELECT * FROM User_Login WHERE username='TestUser' AND pass='password'";
         $res = mysqli_query($mysqli, $test);
 
         $entries = array();

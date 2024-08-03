@@ -1,7 +1,5 @@
 <?php 
-    //session_start();
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
+    session_start();
 
     // Connect
     $mysqli = mysqli_connect("192.81.214.86", "aileen", "i-heart-deftones-and-cats", "cpsc_3750");
@@ -25,9 +23,11 @@
 
         // Handle data
         if ($res) {
-            
+            // Set session
             if (mysqli_num_rows($res) > 0) {
                 echo "Success";
+                $_SESSION['user'] = $clean_user;
+                $_SESSION['loggedin'] = true;
             } else {
                 echo "Incorrect combo";    
             }

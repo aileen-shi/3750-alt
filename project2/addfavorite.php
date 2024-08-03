@@ -26,14 +26,15 @@
             $cardRarity = $data['rarityStr'];
             $cardPrice = $data['priceStr'];
             date_default_timezone_set('America/New_York');
-            $date = date('Y-m-d H:i:s');
+            $date = date('Y-m-d H:i:s');           
             $user = $_SESSION['user'];
+            echo "Here";
+        }
+            /*
 
             $sql = "INSERT INTO Favorites (card_name, card_year, rarity, price, time_added, username)
-                    VALUES ('$cardName', '$cardYear', '$cardRarity', '$cardPrice', '$date', '$user')";
-
-            echo $sql;
-            /*
+                    VALUES ('$cardName', '$cardYear', '$cardRarity', '$cardPrice', '$date', '$user')";      
+                 
             if ($mysqli->query($sql) === TRUE) {
                 echo "Successfully created entry";
             }
@@ -46,6 +47,6 @@
             echo "Invalid JSON data";
         }
             */
-    }
+    }   
         
 ?>

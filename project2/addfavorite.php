@@ -31,9 +31,6 @@
             $sql = "INSERT INTO Favorites (card_name, card_year, rarity, price, time_added, username)
                     VALUES ('$cardName', '$cardYear', '$cardRarity', '$cardPrice', '$date', '$user')";      
                  
-            echo $sql;
-        }
-        /*
             if ($mysqli->query($sql) === TRUE) {
                 echo "Successfully created entry";
             }
@@ -45,7 +42,7 @@
         else {
             echo "Invalid JSON data";
         }
-            */
+            
     }   
         
 ?>

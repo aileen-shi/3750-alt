@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const previous = document.getElementById("previous");
   const next = document.getElementById("next");
   const account = document.getElementById("account-btn");
+  const allAccounts = document.getElementById("all-account-btn");
 
   // Event listener for previous and next buttons
   previous.addEventListener("click", function(event) {
@@ -58,6 +59,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // Event listener account info
   account.addEventListener("click", function(event) {
     window.location.assign("https://aileenshi.com/project2/account.html");
+  });
+
+  // Event listener all accounts info
+  allAccounts.addEventListener("click", function(event) {
+    window.location.assign("https://aileenshi.com/project2/all.html");
   });
 });
 

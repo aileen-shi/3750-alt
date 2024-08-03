@@ -40,9 +40,11 @@
             mysqli_free_result($res);
             */
         }
+        /*
         else {
             echo "Query error";
         }
+            */
 
 
         mysqli_close($mysqli);

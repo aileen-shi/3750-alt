@@ -1,4 +1,10 @@
 <?php 
+/* 
+    Aileen Shi
+    CPSC 3750
+    8/3/24
+    Register
+*/
 // Connect
 $mysqli = mysqli_connect("192.81.214.86", "aileen", "i-heart-deftones-and-cats", "cpsc_3750");
 

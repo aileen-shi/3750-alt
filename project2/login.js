@@ -1,3 +1,9 @@
+/* 
+    Aileen Shi
+    CPSC 3750
+    8/3/24
+    Login
+*/
 document.addEventListener("DOMContentLoaded", function () {
     const register = document.getElementById("register");
     const loginForm = document.getElementById("login-form");

@@ -1,3 +1,9 @@
+/* 
+    Aileen Shi
+    CPSC 3750
+    8/3/24
+    View all accounts
+*/
 document.addEventListener("DOMContentLoaded", function () {
     viewAll();
 
@@ -8,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 });
 
+// View all accounts
 function viewAll() {
     // Response
     request = new XMLHttpRequest();
@@ -26,6 +33,7 @@ function viewAll() {
     request.send();
 }
 
+// Update
 function show(entries) {
     const results = document.getElementById("all-container");
     for (i = 0; i < entries.length; i++) {

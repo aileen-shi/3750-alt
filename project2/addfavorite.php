@@ -1,4 +1,10 @@
 <?php 
+/*
+    Aileen Shi
+    CPSC 3750
+    8/3/24
+    Add favorite to list
+*/
     session_start();
 
     // Check if user logged in
@@ -28,6 +34,7 @@
             $date = date('Y-m-d H:i:s');           
             $user = $_SESSION['user'];            
 
+            // SQL query
             $sql = "INSERT INTO Favorites (card_name, card_year, rarity, price, time_added, username)
                     VALUES ('$cardName', '$cardYear', '$cardRarity', '$cardPrice', '$date', '$user')";      
                  

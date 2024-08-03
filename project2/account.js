@@ -1,3 +1,9 @@
+/* 
+    Aileen Shi
+    CPSC 3750
+    8/3/24
+    Account JS
+*/
 document.addEventListener("DOMContentLoaded", function () {
     checkLogin();
 
@@ -9,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 });
 
+// Check if user is logged in before accessing
 function checkLogin() {
     request = new XMLHttpRequest();
     console.log("checcking login");
@@ -109,6 +116,7 @@ function show(entries) {
     }
 }
 
+// Remove favorites
 function removeFavorite(name, dateAdded){
     console.log("removing");
     // Data to pass

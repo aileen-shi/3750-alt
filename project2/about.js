@@ -1,3 +1,10 @@
+/*
+    Aileen Shi
+    CPSC 3750
+    8/3/24
+    About js
+*/
+// Back button
 document.addEventListener("DOMContentLoaded", function () {
     const button = document.getElementById("back-to-home");
 

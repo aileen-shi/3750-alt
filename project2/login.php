@@ -1,4 +1,10 @@
 <?php 
+    /* 
+        Aileen Shi
+        CPSC 3750
+        8/3/24
+        Login
+    */
     session_start();
 
 

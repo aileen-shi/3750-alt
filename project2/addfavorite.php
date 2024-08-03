@@ -20,21 +20,20 @@
         $data = json_decode($raw, true);
 
         if ($data) {
-            echo "decoding data";
             $cardName = $data['nameStr'];
             $cardYear = $data['yearStr'];
             $cardRarity = $data['rarityStr'];
             $cardPrice = $data['priceStr'];
             date_default_timezone_set('America/New_York');
             $date = date('Y-m-d H:i:s');           
-            $user = $_SESSION['user'];
-            echo "Here";
-        }
-            /*
+            $user = $_SESSION['user'];            
 
             $sql = "INSERT INTO Favorites (card_name, card_year, rarity, price, time_added, username)
                     VALUES ('$cardName', '$cardYear', '$cardRarity', '$cardPrice', '$date', '$user')";      
                  
+            echo $sql;
+        }
+        /*
             if ($mysqli->query($sql) === TRUE) {
                 echo "Successfully created entry";
             }

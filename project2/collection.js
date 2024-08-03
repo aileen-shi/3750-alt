@@ -212,8 +212,10 @@ function showDetail(card, cardImage) {
   addCard.textContent = "Add to Collection"
   addCard.classList.add("center-btn");
   resultContainer.appendChild(addCard);
+  // Event listener
   addCard.addEventListener("click", function(event) {
     console.log("adding to collection");
+    addFavorites(card);
   });
 
   // Release date
@@ -272,4 +274,37 @@ function showDetail(card, cardImage) {
 
   cardImage.insertAdjacentElement("afterend", resultContainer);
 
+}
+
+function addFavorites(card) {
+  // Prepare data to send
+  cardName = card.name;
+  cardYear = card.set.releaseDate;
+  rarity = card.rarity;
+  price = card.cardmarket.prices.averageSellPrice;
+
+  data = {
+    nameStr: cardName,
+    yearStr: cardYear,
+    rarityStr: rarity,
+    priceStr: price
+  };
+
+  jsonData = JSON.stringify(data);
+
+  // Request
+  request = new XMLHttpRequest();
+  request.open('POST', 'addfavorite.php', true);
+  request.setRequestHeader('Content-Type', 'application/json');
+
+  // Response
+  request.onreadystatechange = function () {
+    if (request.readyState === 4 && request.status === 200) {
+      console.log("Success");
+    }
+    else {
+      console.error("Error: ", request.statusText);
+    }
+  }
+  request.send(jsonData);
 }

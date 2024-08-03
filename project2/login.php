@@ -22,7 +22,7 @@
         $test = "SELECT * FROM User_Login";
         $res = mysqli_query($mysqli, $sql);
 
-        echo $clean_user . " " . $clean_pass;
+        //echo $clean_user . " " . $clean_pass;
         $entries = array();
 
         // Handle data
